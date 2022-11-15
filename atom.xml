@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-06-10T08:54:44.073Z</updated>
+  <updated>2022-04-15T07:42:24.613Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>最终汇报</title>
-    <link href="http://example.com/2022/06/10/%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5/"/>
-    <id>http://example.com/2022/06/10/%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5/</id>
-    <published>2022-06-10T06:15:21.000Z</published>
-    <updated>2022-06-10T08:54:44.073Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="d3ctf"><a href="#d3ctf" class="headerlink" title="d3ctf"></a>d3ctf</h1><p>公号第5名<br><img src="https://s2.loli.net/2022/06/10/C7xNjkl6SHy8TPp.png" alt="d3ctf.png"></p><h1 id="dasctf"><a href="#dasctf" class="headerlink" title="dasctf"></a>dasctf</h1><p>团队赛35名<br><img src="https://s2.loli.net/2022/06/10/dk5gYm7eHCZAM8i.png" alt="dasctf3.png"></p><h1 id="Dest0g3"><a href="#Dest0g3" class="headerlink" title="Dest0g3"></a>Dest0g3</h1><p>个人赛693名<br><img src="https://s2.loli.net/2022/06/10/8wodhCaMGQzjmKT.png" alt="Dest0g3 520迎新赛.png"></p><h1 id="miniLCTF"><a href="#miniLCTF" class="headerlink" title="miniLCTF"></a>miniLCTF</h1><p>团队赛第十名<br><img src="https://s2.loli.net/2022/06/10/a9PkhpZ2Ag4CI3F.png" alt="miniLCTF.png"></p><h1 id="pwnhub5月公开赛"><a href="#pwnhub5月公开赛" class="headerlink" title="pwnhub5月公开赛"></a>pwnhub5月公开赛</h1><p><img src="https://s2.loli.net/2022/06/10/MWIn3K1HadD56z7.png" alt="pwnhub5月公开赛.png"></p><h1 id="tsctf"><a href="#tsctf" class="headerlink" title="tsctf"></a>tsctf</h1><p>团队赛第六名<br><img src="https://s2.loli.net/2022/06/10/xbJlTq6XUrnoI8m.png" alt="tsctf.png"></p><h1 id="VNCTF"><a href="#VNCTF" class="headerlink" title="VNCTF"></a>VNCTF</h1><p>个人赛421名<br><img src="https://s2.loli.net/2022/06/10/6or2hKYgwHeT4y5.png" alt="VNCTF.png"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;d3ctf&quot;&gt;&lt;a href=&quot;#d3ctf&quot; class=&quot;headerlink&quot; title=&quot;d3ctf&quot;&gt;&lt;/a&gt;d3ctf&lt;/h1&gt;&lt;p&gt;公号第5名&lt;br&gt;&lt;img src=&quot;https://s2.loli.net/2022/06/10/C7xNjkl6</summary>
-      
-    
-    
-    
-    
-    <category term="CTF" scheme="http://example.com/tags/CTF/"/>
-    
-  </entry>
   
   <entry>
     <title>DASCTF 2022</title>
@@ -476,6 +454,30 @@ public $v</summary>
     
     
     <category term="亡🐏补牢" scheme="http://example.com/tags/%E4%BA%A1%F0%9F%90%8F%E8%A1%A5%E7%89%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>你爹刷题1</title>
+    <link href="http://example.com/2021/11/06/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%981/"/>
+    <id>http://example.com/2021/11/06/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%981/</id>
+    <published>2021-11-06T08:37:52.000Z</published>
+    <updated>2022-01-09T10:29:12.267Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong># define 你爹 你👱🏻‍</strong></p><p>(因为你👱🏻‍来自香榭丽舍大街，所以必须沾点金发碧眼）</p><p>(又因为你👱🏻‍学习C语言的时候看到define都是放到最上面的，所以你👱🏻‍先发布一个announcement)</p><h1 id="GXYCTF2019-Ping-Ping-Ping"><a href="#GXYCTF2019-Ping-Ping-Ping" class="headerlink" title="[GXYCTF2019]Ping Ping Ping"></a>[GXYCTF2019]Ping Ping Ping</h1><p>你👱🏻‍一看这个题目就想起一首叫《乒乒乓乓》歌，只不过你👱🏻‍只是听别人说过并不知道哪个是正版。</p><p>你👱🏻‍打开靶场，看到个/?ip，你👱🏻‍马上就想到，127.0.0.1沾点特殊，于是风暴输入，/?ip=127.0.0.1，<br><img src="https://i.loli.net/2021/11/06/6o8un54OKlsECIf.png"></p><p>你👱🏻发现有回显。于是觉得有活可整</p><p>于是输入/?ip=127.0.0.1;ls进行一个列表，发现了flag<br><img src="https://i.loli.net/2021/11/06/kyFlCGznIN87EmJ.png"></p><p>你👱🏻这个时候决定乘胜追击 输入/?ip=127.0.0.1;cat flag.php</p><p><img src="https://i.loli.net/2021/11/06/B9T1vsUVeJOdpIY.png"></p><p>你👱🏻发现不仅没有读到flag 还被骂了，鉴于对方不是银，所以你👱🏻决定还是先做题</p><p>你👱🏻觉得是flag被检测了，于是先看看index长什么样子，结果同样cat index也被检测到了</p><p>于是你👱🏻开始怀疑是不是有空格绕过，百度了一下空格绕过方法</p><p><strong>空格过滤<br>空格可以用以下字符串代替：</strong></p><p><strong>&lt; 、&lt;&gt;、%20(space)、%09(tab)、$IFS$9、 ${IFS}、$IFS等</strong></p><p><strong>$IFS在linux下表示分隔符，但是如果单纯的cat$IFS2,bash解释器会把整个IFS2当做变量名，所以导致输不出来结果，然而如果加一个{}就固定了变量名，同理在后面加个$可以起到截断的作用<br>，但是为什么要用$9呢，因为$9只是当前系统shell进程的第九个参数的持有者，它始终为空字符串。$IFS$9后面这个数字你👱🏻发现随便填好像没事</strong></p><p>你👱🏻又开始一轮have a try，输入/?ip=127.0.0.1;cat$IFS$9flag.php</p><p><img src="https://i.loli.net/2021/11/06/kCDBVpa1hqbMWJn.png"></p><p>你👱🏻果然料事如神，果然又被fuck了，于是你👱🏻决定看看index</p><p><img src="https://i.loli.net/2021/11/06/b1fIu95drWj4xwa.png"></p><p>这下clear了</p><p>所以你👱🏻绕过flag，输入/?ip=127.0.0.1;d=g;cat$IFS$9fla$d.php<br>这里就是讲的一个拼接</p><p>你👱🏻发现没东西 于是查看网页源代码给你小子逮住了。</p><p><img src="https://i.loli.net/2021/11/06/ECtirlcdgIuxVNJ.png"></p><p>你👱🏻看到后面还有那么大一坨，觉得这个不是正统方法，所以去看了下官方wp<br>发现官方wp的payload是：</p><p><strong>echo$IFS$1Y2F0IGZsYWcucGhw|base64$IFS$1-d|sh</strong></p><p>就是说啥呢就是说先对cat flag.php进行base64加密，过滤bash就用sh</p><p>你👱🏻发现还有一个方法：</p><p><strong>内联执行</strong></p><p>使用 `` 代替 | ，将反引号内命令的输出作为输入执行</p><p><strong>/?ip=2.2.2.2;cat$IFS$1<code>ls</code></strong></p><p>就是把整个列表都拿下</p><p>你👱🏻进游戏语音的时候常说：你👱🏻来了。</p><p>现在你👱🏻真的来了。</p><p>你👱🏻这两个月去跟你👱🏻这学期要学的12门专业课进行了一番自由搏击，以你👱🏻的绩点遭受聚变打击作为收尾。</p><p>你👱🏻决定继续刷题</p><p>不信你👱🏻给你截图</p><p><img src="https://s2.loli.net/2022/01/09/vV583FdrQK6NLt7.png"></p><h1 id="极客大挑战-2019-Http"><a href="#极客大挑战-2019-Http" class="headerlink" title="[极客大挑战 2019]Http"></a>[极客大挑战 2019]Http</h1><p>你👱🏻一进去就看到这个页面，然后你爹乱点一番，没有吊用</p><p><img src="https://s2.loli.net/2022/01/07/gTbr6MBiEOfmRdH.png"></p><p>于是你👱🏻用出了唯一的技能：查看网页源代🐴</p><p><img src="https://s2.loli.net/2022/01/07/kAiO78fGwVE5gMb.png"></p><p>经过你👱🏻一学期的web学习，你👱🏻虽然就学会了怎么往网页上放文字和改颜色，但是你👱🏻还会放那种点了就会中病毒的木马链接(取后者)，这个href的后面跟着的就是一个新世界。</p><p>我趣，你👱🏻一看secret.php就知道这个玩意沾点关键</p><p>然后你👱🏻就点进去看看什么牛马</p><p><img src="https://s2.loli.net/2022/01/07/6It8zoBsPxKWek9.png"></p><p>上面的style什么的没吊用，艺术在下半身。</p><p><img src="https://img-blog.csdnimg.cn/2020050317152029.png"></p><p>再看看网页，它说你👱🏻不是来自<a href="https://sycsecret.buuoj.cn,多少沾点排外了,但是你👱🏻能给你伪造个id/">https://Sycsecret.buuoj.cn，多少沾点排外了，但是你👱🏻能给你伪造个id</a> card 这里你👱🏻使用一个插件:</p><p><strong>ModHeader</strong></p><p>这里使用ModHeader 将Referer修改为他要的那个，进入下一步</p><p><img src="https://s2.loli.net/2022/01/07/eTSnciRm5QbJ34f.png"></p><p>这里又要求你👱🏻使用Syclover brower进行next level</p><p><img src="https://s2.loli.net/2022/01/07/xlm6LacJkDU12zB.png"></p><p>同理 使用Modheader增加 User-Agent:Syclover</p><p><img src="https://s2.loli.net/2022/01/07/Z4QNJChL2oRy1HG.png"></p><p>这里是增加X-Forwarded-For:127.0.0.1</p><p><img src="https://s2.loli.net/2022/01/07/iNKYfM5OmrBvUJT.png"></p><p>你👱🏻轻松拿下</p><p>这里你👱🏻选择了一个different滴way 没有用burpsuite 因为你👱🏻的burpsuite有时候会出一些莫名其妙的problem，跟个幻象一样戏耍你👱🏻。</p><h1 id="RoarCTF-2019-Easy-Calc"><a href="#RoarCTF-2019-Easy-Calc" class="headerlink" title="[RoarCTF 2019]Easy Calc"></a>[RoarCTF 2019]Easy Calc</h1><p>你👱🏻一点进去试了一下，发现确实能计算</p><p><img src="https://s2.loli.net/2022/01/08/3K4NEkYr7ipzR2J.png"></p><p>不该输了的输入了会报错</p><p><img src="https://s2.loli.net/2022/01/08/XxwsyvBlAYqeQ2I.png"></p><p>然后你👱🏻查看源代码 看到scrpit下面有个calc.php，觉得应该有这么一个东西，进去果然</p><p><img src="https://s2.loli.net/2022/01/08/Gnj89os1tIWRvqk.png"></p><p>直接Get就会权限不足你👱🏻</p><p><img src="https://s2.loli.net/2022/01/08/kTcEIwuGX4mROML.png"></p><p>因此可以在num前面加个空格后成功输出aaaa</p><p><img src="https://s2.loli.net/2022/01/08/Mzfd3OPubcQy7gK.png"></p><p>构造calc.php?%20num=1;var_dump(scandir(chr(47)))，扫描一下，这里本来是scandir(“/“)，但是”/“被过滤了，所以你👱🏻用chr(47)绕过,发现了f1agg文件;</p><p><img src="https://s2.loli.net/2022/01/08/sbZa5hFr7HfiukC.png"></p><p>同理，你👱🏻构造payload</p><p>calc.php? num=1;var_dump(file_get_contents(chr(47).chr(102).chr(49).chr(97).chr(103).chr(103)))</p><p>得到flag</p><h1 id="极客大挑战-2019-PHP"><a href="#极客大挑战-2019-PHP" class="headerlink" title="[极客大挑战 2019]PHP"></a>[极客大挑战 2019]PHP</h1><p>你👱🏻打开网页，这个前端倒是很有意思</p><p><img src="https://s2.loli.net/2022/01/09/VR7kJldTEaWKomc.png"></p><p>你👱🏻查看源代码没看出什么东西，于是通过dirsearch扫一下</p><p>python dirsearch.py -u <a href="http://81f84012-5b91-45d8-bd99-d437dcd7b037.node4.buuoj.cn:81/">http://81f84012-5b91-45d8-bd99-d437dcd7b037.node4.buuoj.cn:81/</a> -e php</p><p>你👱🏻标记了dirsearch 等级1</p><p><a href="https://github.com/maurosoria/dirsearch">https://github.com/maurosoria/dirsearch</a></p><p>确实很多 但是你👱🏻看到这个绿色的东西的时候就感觉这个玩意在🎣你👱🏻<br>所以你👱🏻下载下来得到类似于网页备份的东西，因而能看到源码</p><p><img src="https://s2.loli.net/2022/01/09/NenzBshbEcoFIuJ.png"></p><p>这个flag.php肯定不会直接给flag,不然其他的干嘛</p><p><img src="https://s2.loli.net/2022/01/09/ptWcsBdofR5VLw4.png"></p><p>class.php如下</p><pre><code>private $username = &#39;nonono&#39;;private $password = &#39;yesyes&#39;;public function __construct($username,$password)&#123;    $this-&gt;username = $username;    $this-&gt;password = $password;&#125;function __wakeup()&#123;    $this-&gt;username = &#39;guest&#39;;&#125;function __destruct()&#123;    if ($this-&gt;password != 100) &#123;        echo &quot;&lt;/br&gt;NO!!!hacker!!!&lt;/br&gt;&quot;;        echo &quot;You name is: &quot;;        echo $this-&gt;username;echo &quot;&lt;/br&gt;&quot;;        echo &quot;You password is: &quot;;        echo $this-&gt;password;echo &quot;&lt;/br&gt;&quot;;        die();    &#125;    if ($this-&gt;username === &#39;admin&#39;) &#123;        global $flag;        echo $flag;    &#125;else&#123;        echo &quot;&lt;/br&gt;hello my friend~~&lt;/br&gt;sorry i can&#39;t give you the flag!&quot;;        die();    &#125;&#125;</code></pre><p>index.php有个这个</p><pre><code>&lt;?phpinclude &#39;class.php&#39;;$select = $_GET[&#39;select&#39;];$res=unserialize(@$select);?&gt;</code></pre><p>显然是一个反序列化构造，但是你👱🏻反序列化学的不好，试了挺久才弄出来</p><p>你👱🏻觉得既然要得到flag，最后一步肯定是要echo flag 这里需要使用到destruct的魔术方法</p><p>__destruct()析构函数（析构函数会在到某个对象的所有引用都被删除或者当对象被显式销毁时执行），这里还要满足username是admin，password是100，其实还算是比较简单的反序列化</p><pre><code>&lt;?phpclass Name&#123;private $username = &#39;nonono&#39;;private $password = &#39;yesyes&#39;;public function __construct($username,$password)&#123;    $this-&gt;username = $username;    $this-&gt;password = $password; &#125;&#125;$a = new Name(&#39;admin&#39;, 100);echo serialize($a);?&gt;</code></pre><p>得到<br>O:4:”Name”:2:{s:14:”Nameusername”;s:5:”admin”;s:14:”Namepassword”;i:100;}</p><p>在反序列化的时候，首先会执行_wakeup（）魔术方法坏了你👱🏻的好事，这个玩意会把username重新赋值，所以需要跳过</p><p>在反序列化字符串时，属性个数的值大于实际属性个数时，会跳过 __wakeup()函数的执行，因此你👱🏻这样设计</p><p>O:4:”Name”:3:{s:14:”Nameusername”;s:5:”admin”;s:14:”Namepassword”;i:100;}</p><p>但还没完，这个声明变量是private,还需要整点狠活</p><p>private 声明的字段为私有字段，只在所声明的类中可见，在该类的子类和该类的对象实例中均不可见。因此私有字段的字段名在序列化时，类名和字段名前面都会加上0的前缀。字符串长度也包括所加前缀的长度</p><p>因此你👱🏻再次进行change</p><p>O:4:”Name”:3:{s:14:”%00Name%00username”;s:5:”admin”;s:14:”%00Name%00password”;i:100;}</p><p>构造payload：</p><p>?select=O:4:%22Name%22:3:{s:14:%22%00Name%00username%22;s:5:%22admin%22;s:14:%22%00Name%00password%22;i:100;}</p><p>才将其拿下</p><p><img src="https://s2.loli.net/2022/01/09/gjzXtdoYr7yDSNG.png"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;# define 你爹 你👱🏻‍&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;(因为你👱🏻‍来自香榭丽舍大街，所以必须沾点金发碧眼）&lt;/p&gt;
+&lt;p&gt;(又因为你👱🏻‍学习C语言的时候看到define都是放到最上面的，所以你👱🏻‍先发布一个announcem</summary>
+      
+    
+    
+    
+    
+    <category term="CTF" scheme="http://example.com/tags/CTF/"/>
     
   </entry>
   
