@@ -1,7 +1,411 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>吴豪滨的地宫</title><meta name="author" content="吴豪滨"><meta name="copyright" content="吴豪滨"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="我是你爹">
+<meta property="og:type" content="website">
+<meta property="og:title" content="吴豪滨的地宫">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="吴豪滨的地宫">
+<meta property="og:description" content="我是你爹">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/11/02/QcqvSFhZDRg5b7o.jpg">
+<meta property="article:author" content="吴豪滨">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/11/02/QcqvSFhZDRg5b7o.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '吴豪滨的地宫',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-11-15 15:22:24'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="吴豪滨的地宫" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/11/02/QcqvSFhZDRg5b7o.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://i.loli.net/2021/11/02/XnfSe8DMpbkBrLP.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">吴豪滨的地宫</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">吴豪滨的地宫</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2022/11/15/hello-world/" title="Hello World">     <img class="post_bg" src="https://i.loli.net/2021/11/09/gRnKyC1ztL7PIDH.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/15/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-15T06:59:06.203Z" title="发表于 2022-11-15 14:59:06">2022-11-15</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+Run server1$ hexo server
+
+More info: Server
+Generate static files1$ hexo generate
+
+More info: Generating
+Deploy to remote sites1$ hexo deploy
+
+More info: Deployment
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2022/06/10/%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5/" title="最终汇报">     <img class="post_bg" src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="最终汇报"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/10/%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5/" title="最终汇报">最终汇报</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-10T06:15:21.000Z" title="发表于 2022-06-10 14:15:21">2022-06-10</time></span></div><div class="content">d3ctf公号第5名
+dasctf团队赛35名
+Dest0g3个人赛693名
+miniLCTF团队赛第十名
+pwnhub5月公开赛
+tsctf团队赛第六名
+VNCTF个人赛421名
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022">     <img class="post_bg" src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DASCTF 2022"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022">DASCTF 2022</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-23T06:15:21.000Z" title="发表于 2022-03-23 14:15:21">2022-03-23</time></span></div><div class="content">ezpop题目源码为
+&lt;?php
+
+class crow
+&#123;
+public $v1;
+public $v2;
+
+function eval() &#123;
+    echo new $this-&gt;v1($this-&gt;v2);
+&#125;
+
+public function __invoke()
+&#123;
+    $this-&gt;v1-&gt;world();
+&#125;
+&#125;
+
+class fin
+&#123;
+public $f1;
+
+public function __destruct()
+&#123;
+    echo $this-&gt;f1 . &#39;114514&#39;;
+&#125;
+
+public function run()
+&#123;
+    ($this-&gt;f1)();
+&#125;
+
+public function __call($a, $b)
+&#123;
+    echo $this-&gt;f1-&gt;get_flag();
+&#125;
+
+&#125;
+
+class what
+&#123;
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2022/03/23/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%986/" title="你爹刷题6">     <img class="post_bg" src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题6"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/23/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%986/" title="你爹刷题6">你爹刷题6</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-23T06:15:21.000Z" title="发表于 2022-03-23 14:15:21">2022-03-23</time></span></div><div class="content">[CISCN2019 华北赛区 Day1 Web2]ikun你👱🏻‍打开题目就出现这个
+
+随便注册个号,有1000元
+
+你👱🏻‍注意到了这个地方,应该是要搞个lv6的,但是看一圈没lv6的。
+
+可能从这里就得写个脚本找了
+
+import requests
+url=&quot;http://6e89c84c-ec2a-4e9a-91ba-bafe514f5216.node4.buuoj.cn:81/shop?page=&quot;
+
+for i in range(0,3000):
+
+r=requests.get(url+str(i))
+if &#39;lv6.png&#39; in r.text:
+    print(i)
+    break;
+
+找出来在180页
+然后发现买不起6级号
+乌鱼了
+
+应该是要抓包修改了。
+
+这里折扣能改,那必须狠狠薅羊毛了
+
+然后被逮到
+百度了一下,这里涉及JWT破解 
+这里可以了解一下JWT
+https://www.cnblogs.com/cjsblog/p/9277677.html
+这里用base64将JWT解码
+得到
+
+然后利用一个网站进行造谣 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2022/03/18/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%985/" title="你爹刷题5">     <img class="post_bg" src="https://s2.loli.net/2022/03/18/HlX1uC4D9eRkYPh.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题5"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/18/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%985/" title="你爹刷题5">你爹刷题5</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-18T06:15:21.000Z" title="发表于 2022-03-18 14:15:21">2022-03-18</time></span></div><div class="content">[WUSTCTF2020]颜值成绩查询你👱🏻‍点进题目就看到这个
+
+输入1试试
+
+得到1伯昏
+数字最多只能输到4
+试了一下很明显是sql注入题目,试试异或1^1^1
+
+插入sql语句
+1^(ascii(substr((select(database())),1,1))&gt;200)^1
+
+
+大于200就查询不到了,明显是布尔盲注
+0^1会出现1的内容
+爆库名
+import requests
+import time
+
+url = &quot;http://5a84ccfd-c740-44de-a8f3-57db290c078a.node4.buuoj.cn/?stunum=&quot;
+
+result = &quot;&quot;
+i = 0
+
+while (True):
+i = i + 1
+head = 32
+tail = 127
+
+while (head &lt; tail):
+    mid = (head + tail) &gt;&gt; 1
+
+    payload = &quot;if(ascii(substr(database(),%d,1))&gt;%d,1,0)& ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2022/03/04/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%984/" title="你爹刷题4">     <img class="post_bg" src="https://img1.baidu.com/it/u=3722771254,1462812708&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=370&amp;h=500" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题4"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/04/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%984/" title="你爹刷题4">你爹刷题4</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-04T06:15:21.000Z" title="发表于 2022-03-04 14:15:21">2022-03-04</time></span></div><div class="content">[BSidesCF 2019]FuturellaF12看到flag
+有🍪吧
+[BJDCTF2020]EasySearch进去是一个登陆页面
+
+进去随便试了几个,回显都一样,试着用dirsearch扫描看能不能找到突破口
+
+你👱🏻‍经过相关查询发现这道题的关键是swp,正好被你👱🏻‍扫描到了
+下面放出源代码
+&lt;?php
+ob_start();
+function get_hash()&#123;
+    $chars = &#39;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&amp;*()+-&#39;;
+    $random = $chars[mt_rand(0,73)].$chars[mt_rand(0,73)].$chars[mt_rand(0,73)].$chars[mt_rand(0,73)].$chars[mt_rand(0,73)];//Random 5 times
+    $content = uniqid().$random;
+    return sha1($ ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2022/03/01/%E6%97%A0%E8%81%8C%E8%BD%AC%E7%94%9F1/" title="无职转生1">     <img class="post_bg" src="https://s2.loli.net/2022/02/28/DchyG29YqFBAfJR.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无职转生1"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/01/%E6%97%A0%E8%81%8C%E8%BD%AC%E7%94%9F1/" title="无职转生1">无职转生1</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-01T15:10:05.000Z" title="发表于 2022-03-01 23:10:05">2022-03-01</time></span></div><div class="content">你👱🏻‍这学期要学逆向,期末需要offonline做5道逆向题
+那你👱🏻‍得看一下逆向题了
+easyre确实是easy了,F12+shift(可以将程序中所有的字符串列出来)即可拿捏
+
+reverse1你👱🏻‍照样F12+shift看到了
+
+跟着点进去看源🐴,这个str2沾点不对劲
+
+跟进str2
+
+可以看到一个格式很像flag的,但是直接交其实交不了,再看伪代码处,有个对str2的判断,这里用的是asc码
+这里的意思就是把o换成0
+也就是flag{hell0_w0rld}
+reverse2你👱🏻‍反编译main函数,这个应该就是主题了吧
+
+再找到貌似是flag的字符串
+
+这里应该就是对{hacking_for_fun}进行变换了
+这里很明显能看出来在遍历字符串,并将i和r换为1
+所以flag为flag{hack1ng_fo1_fun}
+内涵的软件
+字符串这里把DBAPP换成flag就行了
+新年快乐这道题首先需要用脱壳工具进行脱壳
+脱壳后用F12找到含有flag的字符串得到主函数
+
+这里就是跟HappyNewYear!进行比较
+所以flag就是flag{HappyNe ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2022/03/01/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%983/" title="你爹刷题3">     <img class="post_bg" src="https://img1.baidu.com/it/u=3722771254,1462812708&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=370&amp;h=500" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题3"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/01/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%983/" title="你爹刷题3">你爹刷题3</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-01T12:30:21.000Z" title="发表于 2022-03-01 20:30:21">2022-03-01</time></span></div><div class="content">你👱🏻‍寒假打了几次比赛,但是做出来的题跟打的比赛次数差不多
+你👱🏻‍太拉胯了,只能继续看题
+否则你👱🏻‍只能从CTF的世界里Get Out了
+你👱🏻‍现在开学进入下赛季了,但是还是得刷点题
+[0CTF 2016]piapiapia你👱🏻‍打开题目是这样
+
+用dirsearch扫一下,扫到www.zip
+
+下载
+
+里面的源码一个一个审计
+
+其中,在config文件里面你👱🏻‍发现了flag和username为root
+尝试用root为username进行登陆,而意外进入的注册页面,注册完成后再进行登录,成功后进入update.php界面
+
+这是profile的php部分源码
+&lt;?php
+require_once(&#39;class.php&#39;);
+if($_SESSION[&#39;username&#39;] == null) &#123;
+    die(&#39;Login First&#39;);    
+&#125;
+$username = $_SESSION[&#39;username&#39;];
+$profile=$user-&gt ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2022/02/28/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%982/" title="你爹刷题2">     <img class="post_bg" src="https://s2.loli.net/2022/02/28/DchyG29YqFBAfJR.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题2"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/02/28/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%982/" title="你爹刷题2">你爹刷题2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-02-28T14:10:05.000Z" title="发表于 2022-02-28 22:10:05">2022-02-28</time></span></div><div class="content">你👱🏻‍寒假打了几次比赛,但是做出来的题跟打的比赛次数差不多
+你👱🏻‍太拉胯了,只能继续看题
+否则你👱🏻‍只能从CTF的世界里Get Out了
+你👱🏻‍现在开学进入下赛季了,但是还是得刷点题
+[WesternCTF2018]shrine打开题目可以看到源码,看起来不多
+import flask
+import os
+ app = flask.Flask(__name__)
+ app.config[&#39;FLAG&#39;] = os.environ.pop(&#39;FLAG&#39;)
+ @app.route(&#39;/&#39;)
+def index():
+ return open(__file__).read()
+ @app.route(&#39;/shrine/&lt;path:shrine&gt;&#39;)
+def shrine(shrine):
+def safe_jinja(s):
+    s = s.replace(&#39;(&#39;, &#39;&#39;).replace(&#39;)&#39;, &#39;&#39;)
+    blackl ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2022/02/21/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%876/" title="快乐寒假6">     <img class="post_bg" src="https://s2.loli.net/2022/02/21/rIFwTLfZou68CpY.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="快乐寒假6"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/02/21/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%876/" title="快乐寒假6">快乐寒假6</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-02-21T14:10:05.000Z" title="发表于 2022-02-21 22:10:05">2022-02-21</time></span></div><div class="content">你👱🏻‍寒假打了几次比赛,但是做出来的题跟打的比赛次数差不多
+你👱🏻‍太拉胯了,只能继续看题
+否则你👱🏻‍只能从CTF的世界里Get Out了
+[安洵杯 2019]easy_serialize_php你👱🏻‍打开网站看源码
+
+根据提示先看phpinfo
+
+这里得直接搜一些敏感点如fopen,disable_,root等等
+再逐步审计代码
+filter函数就是正则匹配 /php|flag|php5|php4|fl1g/i 替换为空
+中间一大串就是给session初始化
+将session序列化之后调用filter函数
+最后我们需要file_get_contents读取文件
+d0g3_f1ag.php直接读是读不到的
+我们需要base64_decode($userinfo[‘img’])=d0g3_f1ag.php
+那么需要$userinfo[‘img’]=ZDBnM19mMWFnLnBocA==
+而$userinfo又是通过$serialize_info反序列化来的
+$serialize_info又是通过session序列化之后再过滤得来的
+session的img在img_ ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/11/02/QcqvSFhZDRg5b7o.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">吴豪滨</div><div class="author-info__description">我是你爹</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">快滚去学</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/15/hello-world/" title="Hello World"><img src="https://i.loli.net/2021/11/09/gRnKyC1ztL7PIDH.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/11/15/hello-world/" title="Hello World">Hello World</a><time datetime="2022-11-15T06:59:06.203Z" title="发表于 2022-11-15 14:59:06">2022-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/10/%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5/" title="最终汇报"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="最终汇报"/></a><div class="content"><a class="title" href="/2022/06/10/%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5/" title="最终汇报">最终汇报</a><time datetime="2022-06-10T06:15:21.000Z" title="发表于 2022-06-10 14:15:21">2022-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DASCTF 2022"/></a><div class="content"><a class="title" href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022">DASCTF 2022</a><time datetime="2022-03-23T06:15:21.000Z" title="发表于 2022-03-23 14:15:21">2022-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/23/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%986/" title="你爹刷题6"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题6"/></a><div class="content"><a class="title" href="/2022/03/23/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%986/" title="你爹刷题6">你爹刷题6</a><time datetime="2022-03-23T06:15:21.000Z" title="发表于 2022-03-23 14:15:21">2022-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/18/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%985/" title="你爹刷题5"><img src="https://s2.loli.net/2022/03/18/HlX1uC4D9eRkYPh.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题5"/></a><div class="content"><a class="title" href="/2022/03/18/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%985/" title="你爹刷题5">你爹刷题5</a><time datetime="2022-03-18T06:15:21.000Z" title="发表于 2022-03-18 14:15:21">2022-03-18</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CTF/" style="font-size: 1.5em; color: #99a9bf">CTF</a> <a href="/tags/%E4%BA%A1%F0%9F%90%8F%E8%A1%A5%E7%89%A2/" style="font-size: 1.3em; color: #99a1ac">亡🐏补牢</a> <a href="/tags/%E4%BD%A0%E7%88%B9%E7%94%9F%E6%B4%BB/" style="font-size: 1.1em; color: #999">你爹生活</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">三月 2022</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">8</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">23</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-11-15T07:22:24.514Z"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2021/11/02/XnfSe8DMpbkBrLP.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 吴豪滨</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "生活历险&#44; 并肩莽莽原野荒,天之涯 地之角 知交半零落".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '生活历险&#44; 并肩莽莽原野荒'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

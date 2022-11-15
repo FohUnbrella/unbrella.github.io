@@ -1,32 +1,218 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>银们各自生活 | 吴豪滨的地宫</title><meta name="keywords" content="你爹生活"><meta name="author" content="吴豪滨"><meta name="copyright" content="吴豪滨"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="你👱🏻‍技术性博客没写几个就想整个生活blog了，哪怕根本没人看。 其实你👱🏻‍想写这个很久了，但是你👱🏻‍没时间去写，只能东拼西凑点时间写，所以你👱🏻‍写的跟个精神分裂患者一样。 你👱🏻‍这学期就是被瓜分的一学期。 你👱🏻‍要补大一上的课，高🌲，🐔导，网安导论。 你👱🏻‍要大二上课内的课，但是这些💩🐴课都难学，你👱🏻‍还不能分配太多时间 你👱🏻‍要做实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="银们各自生活">
+<meta property="og:url" content="http://example.com/2021/11/15/%E9%93%B6%E4%BB%AC%E5%90%84%E8%87%AA%E7%94%9F%E6%B4%BB/index.html">
+<meta property="og:site_name" content="吴豪滨的地宫">
+<meta property="og:description" content="你👱🏻‍技术性博客没写几个就想整个生活blog了，哪怕根本没人看。 其实你👱🏻‍想写这个很久了，但是你👱🏻‍没时间去写，只能东拼西凑点时间写，所以你👱🏻‍写的跟个精神分裂患者一样。 你👱🏻‍这学期就是被瓜分的一学期。 你👱🏻‍要补大一上的课，高🌲，🐔导，网安导论。 你👱🏻‍要大二上课内的课，但是这些💩🐴课都难学，你👱🏻‍还不能分配太多时间 你👱🏻‍要做实">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/11/09/SaopgqOWJmMT6cE.jpg">
+<meta property="article:published_time" content="2021-11-15T03:36:27.000Z">
+<meta property="article:modified_time" content="2021-11-15T03:44:58.287Z">
+<meta property="article:author" content="吴豪滨">
+<meta property="article:tag" content="你爹生活">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/11/09/SaopgqOWJmMT6cE.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/11/15/%E9%93%B6%E4%BB%AC%E5%90%84%E8%87%AA%E7%94%9F%E6%B4%BB/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '银们各自生活',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-11-15 11:44:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-    if theme.reward.enable
-      !=partial('includes/post/reward', {}, {cache: true})
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="吴豪滨的地宫" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/11/02/QcqvSFhZDRg5b7o.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2021/11/09/SaopgqOWJmMT6cE.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">吴豪滨的地宫</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">银们各自生活</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-15T03:36:27.000Z" title="发表于 2021-11-15 11:36:27">2021-11-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-15T03:44:58.287Z" title="更新于 2021-11-15 11:44:58">2021-11-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="银们各自生活"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>你👱🏻‍技术性博客没写几个就想整个生活blog了，哪怕根本没人看。</p>
+<p>其实你👱🏻‍想写这个很久了，但是你👱🏻‍没时间去写，只能东拼西凑点时间写，所以你👱🏻‍写的跟个精神分裂患者一样。</p>
+<p>你👱🏻‍这学期就是被瓜分的一学期。</p>
+<p>你👱🏻‍要补大一上的课，高🌲，🐔导，网安导论。</p>
+<p>你👱🏻‍要大二上课内的课，但是这些💩🐴课都难学，你👱🏻‍还不能分配太多时间</p>
+<p>你👱🏻‍要做实验班的支线任务，做网站，做漏洞扫描平台，老师什么都不教，只当个发布任务的NPC，随口不动脑子的一句话所有人却要为此付出大量时间。</p>
+<p>你👱🏻‍还要学CTF，有的比赛你👱🏻‍还得去打，一打就是通宵达旦一两天。</p>
+<p>你👱🏻‍还要准备六级，虽然你👱🏻‍到时候大概率是白给。</p>
+<p>你👱🏻‍还要面对各种实验，各种装环境，经常是一装一天都弄不好。</p>
+<p>就连你👱🏻‍打个Apex，都还要注意不要干💩🐴事情，免得以后车队不要你👱🏻‍了</p>
+<p>你👱🏻‍很喜欢一句话：</p>
+<p><img src="https://i.loli.net/2021/11/15/qPzmhnxyQEd8LHV.png"></p>
+<p>如果觉得你👱🏻‍就是喜欢卖惨，喜欢抱怨，不想看下去的话，你👱🏻‍觉得可以滚了，你把你👱🏻‍当成物质上的人，你👱🏻‍也这样看你。</p>
+<p>你👱🏻‍已经这样了，然而是什么呢？</p>
+<p>你👱🏻‍做出来的网站被老师指指点点，说你👱🏻‍功能做少了，游戏源码要自己写，你👱🏻‍看了一下游戏源码大概十几万行，然而你👱🏻‍只有两周时间，你👱🏻‍也不是只学这门课。</p>
+<p>你👱🏻‍因为上学期拉了，大一上因为转专业基本上没算，又损失一学期德育分，这学期综评自然就很拉，又被一些人阴阳怪气，哈哈，什么臭🐟烂🦐都能来骑你👱🏻‍脸了。</p>
+<p>你👱🏻‍看着CTF群里大🔥们都在讨论题目，你👱🏻‍只能先复习，你👱🏻‍看着别人讨论的东西越来越炫酷直到你👱🏻‍看不懂，你👱🏻‍确实无法把全部献给CTF，反正也觉得你👱🏻‍不是那块料，你👱🏻‍问个题，跟你👱🏻‍说无法识别你的提问方式，你👱🏻‍学个东西为什么还要卑躬屈膝，一点正反馈都没有，你👱🏻‍凭什么去学。</p>
+<p>你👱🏻‍就连打个Apex还被队友各种说：“你打你🐴400个小时了，怎么还没上钻石”，<img src="https://i.loli.net/2021/11/15/uVmYPwp2IsxGXQv.png">，你👱🏻‍是Apex专业的是吧。‍</p>
+<p>你👱🏻‍原来觉得，变得很忙是好事，变的很忙会变强，变得很强就能有人理你👱🏻‍了，然而你👱🏻‍发现银们都是各自生活，你👱🏻‍每次发言都仿佛一个🤡一样自我拉扯，在聊天软件中你👱🏻‍出现一般是这样。</p>
+<pre><code>                      10:42:21
+</code></pre>
+<p>🧑：諸閦隸僧閦降閦吽諸閦陀摩閦隸閦僧閦缽閦薩咤尊閦如閦如</p>
+<p>🧑🏻: 諸隸諳僧降諳吽諸諳陀諳摩諳隸諳僧諳缽薩諳咤諳薩諳如諳如諳</p>
+<p>閦諸閦隸閦僧閦降閦吽諸閦陀閦摩閦隸僧閦缽薩閦咤閦薩閦薩閦如閦    ：你👱🏻‍</p>
+<pre><code>                      11：49:23
+</code></pre>
+<p>🧑🏼：冥諸冥隸冥僧冥降冥吽諸冥陀冥摩冥隸僧冥缽薩咤冥尊冥薩如冥</p>
+<p><img src="https://i.loli.net/2021/11/15/uVmYPwp2IsxGXQv.png"></p>
+<p>你👱🏻‍的消息仿佛跟加了注释符号一样不被系统读取，那既然不想理你👱🏻‍就可以不要披着好友的皮，把你👱🏻‍拉进去活跃气氛，可能是在大佬眼中，你👱🏻‍的问题是简单的，低能的，别人的问题是有意义的，interesting的，所以不予回答。</p>
+<p>你👱🏻‍高中的时候背的作文素材大部分已经忘了，但是你👱🏻‍确实还记得一句：“每当你觉得想要批评什么人的时候,你切要记着,这个世界上的人并非都具备你禀有的条件。”</p>
+<p>你👱🏻‍接触编程时间是今年3月到现在8个月，有的人高中就开始打比赛，就对你👱🏻‍各种示意敌人已不见踪影，“为什么这个算法都不知道啊”，“这道题，不随便🐏？”，觉得你👱🏻‍没学好就是因为你👱🏻‍懒，你👱🏻‍确实还需要吃饭和睡觉，<img src="https://i.loli.net/2021/11/15/uVmYPwp2IsxGXQv.png">。</p>
+<p>凭什么你👱🏻‍比🐶都忙，还是被各种看不起</p>
+<p>凭什么你👱🏻‍辛辛苦苦做出来的东西还被人不尊重</p>
+<p>凭什么别银都是组排，你👱🏻‍是单排</p>
+<p>凭什么你👱🏻‍大学难度这块一直都比别银高，还要作同等评价</p>
+<p>为什么你👱🏻‍突然要来发神经呢，因为你👱🏻‍感觉这几周每天都过得异常奇怪，于是突发奇想去做个测试</p>
+<p><img src="https://i.loli.net/2021/11/15/9DfZx5pnQJ4sCWK.jpg"></p>
+<p>估计又有银说：这个测试是假滴，都是假滴</p>
+<p>你👱🏻‍：<img src="https://i.loli.net/2021/11/15/uVmYPwp2IsxGXQv.png"></p>
+<p>你👱🏻‍觉得差不多可以闭关锁国了</p>
+<p>你👱🏻‍觉得阴阳怪气你👱🏻‍的银可以滚了</p>
+<p>你👱🏻‍觉得把你👱🏻‍当成物质银的银可以滚了</p>
+<p>你👱🏻‍觉得有事没事沉默你👱🏻‍的银可以滚了</p>
+<p>当然也可以自己滚</p>
+<p>你👱🏻‍的队友只有你👱🏻‍。</p>
+<p>你👱🏻‍已经无语凝噎。</p>
+<p>有个true friend确实是一件最难的事。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">吴豪滨</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/11/15/%E9%93%B6%E4%BB%AC%E5%90%84%E8%87%AA%E7%94%9F%E6%B4%BB/">http://example.com/2021/11/15/%E9%93%B6%E4%BB%AC%E5%90%84%E8%87%AA%E7%94%9F%E6%B4%BB/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">吴豪滨的地宫</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%BD%A0%E7%88%B9%E7%94%9F%E6%B4%BB/">你爹生活</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/11/09/SaopgqOWJmMT6cE.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/11/15/%E8%B4%B5%E7%89%A9%E5%A0%821/"><img class="prev-cover" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ferbingeditor.diershoubing.com%2F201904281302067572.png&amp;refer=http%3A%2F%2Ferbingeditor.diershoubing.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1644742333&amp;t=b9e3249758f52236d5bcc42c89399864" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">贵物堂1</div></div></a></div><div class="next-post pull-right"><a href="/2021/11/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-one/"><img class="next-cover" src="https://i.loli.net/2021/11/09/gRnKyC1ztL7PIDH.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">操作系统-one</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/11/15/%E8%B4%B5%E7%89%A9%E5%A0%821/" title="贵物堂1"><img class="cover" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ferbingeditor.diershoubing.com%2F201904281302067572.png&refer=http%3A%2F%2Ferbingeditor.diershoubing.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1644742333&t=b9e3249758f52236d5bcc42c89399864" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-15</div><div class="title">贵物堂1</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/11/02/QcqvSFhZDRg5b7o.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">吴豪滨</div><div class="author-info__description">我是你爹</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">快滚去学</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/15/hello-world/" title="Hello World"><img src="https://i.loli.net/2021/11/09/gRnKyC1ztL7PIDH.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/11/15/hello-world/" title="Hello World">Hello World</a><time datetime="2022-11-15T06:59:06.203Z" title="发表于 2022-11-15 14:59:06">2022-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/10/%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5/" title="最终汇报"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="最终汇报"/></a><div class="content"><a class="title" href="/2022/06/10/%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5/" title="最终汇报">最终汇报</a><time datetime="2022-06-10T06:15:21.000Z" title="发表于 2022-06-10 14:15:21">2022-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DASCTF 2022"/></a><div class="content"><a class="title" href="/2022/03/23/DASCTF%202022/" title="DASCTF 2022">DASCTF 2022</a><time datetime="2022-03-23T06:15:21.000Z" title="发表于 2022-03-23 14:15:21">2022-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/23/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%986/" title="你爹刷题6"><img src="https://s2.loli.net/2022/03/23/ouOyf5ecU1hawIS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题6"/></a><div class="content"><a class="title" href="/2022/03/23/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%986/" title="你爹刷题6">你爹刷题6</a><time datetime="2022-03-23T06:15:21.000Z" title="发表于 2022-03-23 14:15:21">2022-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/18/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%985/" title="你爹刷题5"><img src="https://s2.loli.net/2022/03/18/HlX1uC4D9eRkYPh.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你爹刷题5"/></a><div class="content"><a class="title" href="/2022/03/18/%E4%BD%A0%E7%88%B9%E5%88%B7%E9%A2%985/" title="你爹刷题5">你爹刷题5</a><time datetime="2022-03-18T06:15:21.000Z" title="发表于 2022-03-18 14:15:21">2022-03-18</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2021/11/09/SaopgqOWJmMT6cE.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 吴豪滨</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
-
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
-
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
-      
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
